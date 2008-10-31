@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+# Open a new tab in Terminal
+# usage: tab [cmd]
+# If cmd is specified, it will be run in new tab while old tab is reactivated.
+# If no cmd, new tab is activated
+require "rubygems"
+require "appscript"
+include Appscript
+ 
+window = app("Terminal").windows.first
+current_tab = window.selected_tab.get
+ 
+# create new tab
+app("System Events").keystroke("t", :using => :command_down)
+new_tab = window.tabs.last
+ 
+# switch back to original tab if set to run init cmd
+window.set(window.selected_tab, :to => current_tab) unless ARGV.empty?
+ 
+# and change dir
+app("Terminal").do_script("cd #{Dir.pwd}", :in => new_tab)
+ 
+# Run init cmd if specified
+app("Terminal").do_script(ARGV.join(" "), :in => new_tab) unless ARGV.empty?
