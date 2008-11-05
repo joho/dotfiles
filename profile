@@ -1,4 +1,4 @@
-PATH="~/scripts:~/.gem/ruby/1.8/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+PATH="~/scripts:~/bin:~/.gem/ruby/1.8/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 export PATH
 
 # get nice colours
