@@ -1,0 +1,4 @@
+cd ~/Source/envato/marketplace
+mate .
+tab script/server -u
+tab script/console
