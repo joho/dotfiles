@@ -1,4 +1,4 @@
-PATH="/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+PATH="~/.gem/ruby/1.8/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 export PATH
 
 TERM=xterm-color; export TERM
