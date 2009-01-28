@@ -1,0 +1,30 @@
+[user]
+  email = jrbarton@gmail.com
+  name = John Barton (joho)
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[apply]
+  whitespace = nowarn
+[branch]
+  autosetupmerge = true
+[alias]
+  track = !sh -c 'git branch --track "$0" "$1" && git checkout "$0"
+  ignored = "!git ls-files --others --exclude-standard"
+  delete = !sh -c 'git branch -D "$0" && git push origin ":$0"' &> /dev/null
+  st = status
+  pr = pull --rebase

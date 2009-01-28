@@ -6,6 +6,9 @@ TERM=xterm-color; export TERM
 export CLICOLOR=1
 export LSCOLORS=DxFxCxDxDxegedabagacad
 
+# set textmate as the editor of choice
+EDITOR='mate -w'; export EDITOR
+
 # git branch in prompt
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
