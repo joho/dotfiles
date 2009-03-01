@@ -49,3 +49,6 @@ _p() {
 }
 
 complete -F _p p
+
+# stop ctrl-D logging me out
+shopt -s -o ignoreeof
