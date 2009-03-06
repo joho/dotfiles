@@ -52,3 +52,19 @@ complete -F _p p
 
 # stop ctrl-D logging me out
 shopt -s -o ignoreeof
+
+# give me script/console or irb depending
+function sc {
+  if [ -x script/console ]; then
+script/console
+  else
+sinatra_rb=`egrep -l "^require.+sinatra.$" *.rb 2>/dev/null`
+    if [ -e $sinatra_rb ]; then
+irb -r $sinatra_rb
+    else
+irb
+    fi
+fi
+}
+
+
