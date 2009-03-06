@@ -22,9 +22,10 @@ function proml {
   local LIGHT_GREEN="\[\033[1;32m\]"
   local       WHITE="\[\033[1;37m\]"
   local  LIGHT_GRAY="\[\033[0;37m\]"
+  local BLINK_GREEN="\[\033[5;32m\]"
  
-PS1="$RED\h:\w$GREEN\$(parse_git_branch)$BLUE\
-$GREEN\$ $WHITE"
+PS1="$RED\h$GREEN[\t]$RED:\w$GREEN\$(parse_git_branch)\
+\n\$ $WHITE"
 PS2='> '
 PS4='+ '
 }
@@ -48,3 +49,6 @@ _p() {
 }
 
 complete -F _p p
+
+# stop ctrl-D logging me out
+shopt -s -o ignoreeof
