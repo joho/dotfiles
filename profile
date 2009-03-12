@@ -36,6 +36,7 @@ source ~/.git-completion.sh
 
 # aliases
 alias la='ls -la'
+alias cowboy='git push && cap deploy'
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
