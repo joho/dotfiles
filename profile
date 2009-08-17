@@ -37,6 +37,7 @@ source ~/.git-completion.sh
 # aliases
 alias la='ls -la'
 alias cowboy='git push && cap deploy'
+alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
@@ -68,4 +69,5 @@ irb
 fi
 }
 
-
+# tee hee, i frickin love little chatty shit when i log in
+fortune
