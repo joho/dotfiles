@@ -28,10 +28,12 @@
   delete = !sh -c 'git branch -D "$0" && git push origin ":$0"'
   st = status
   pr = pull --rebase
+  cav = commit -a -v
+  co = checkout
 [merge]
   tool = opendiff
 [mergetool "diffmerge"]
   cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
   trustExitCode = false
 [push]
-  default = matching
+  default = current

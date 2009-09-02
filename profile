@@ -1,4 +1,4 @@
-PATH="~/scripts:~/bin:~/.gem/ruby/1.8/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+PATH="~/scripts:~/.rvm/bin/:~/bin:~/.gem/ruby/1.8/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:$PATH"
 export PATH
 
 # get nice colours
@@ -8,6 +8,9 @@ export LSCOLORS=DxFxCxDxDxegedabagacad
 
 # set textmate as the editor of choice
 EDITOR='mate -w'; export EDITOR
+
+# set up
+if [ -f ~/.rvm/bin/rvm ] ; then source ~/.rvm/bin/rvm ; fi
 
 # git branch in prompt
 function parse_git_branch {
