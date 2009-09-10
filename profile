@@ -9,7 +9,7 @@ export LSCOLORS=DxFxCxDxDxegedabagacad
 # set textmate as the editor of choice
 EDITOR='mate -w'; export EDITOR
 
-# set up
+# set up RVM
 if [ -f ~/.rvm/bin/rvm ] ; then source ~/.rvm/bin/rvm ; fi
 
 # git branch in prompt
