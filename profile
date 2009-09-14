@@ -41,6 +41,7 @@ source ~/.git-completion.sh
 alias la='ls -la'
 alias cowboy='git push && cap deploy'
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
+alias restart_nginx='sudo /opt/nginx/sbin/nginx -s stop && sudo /opt/nginx/sbin/nginx'
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
