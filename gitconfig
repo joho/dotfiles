@@ -32,8 +32,5 @@
   co = checkout
 [merge]
   tool = opendiff
-[mergetool "diffmerge"]
-  cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-  trustExitCode = false
 [push]
   default = current
