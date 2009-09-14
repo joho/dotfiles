@@ -10,7 +10,7 @@ export LSCOLORS=DxFxCxDxDxegedabagacad
 EDITOR='mate -w'; export EDITOR
 
 # set up RVM
-if [ -f ~/.rvm/bin/rvm ] ; then source ~/.rvm/bin/rvm ; fi
+if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
 # git branch in prompt
 function parse_git_branch {
@@ -74,3 +74,12 @@ fi
 
 # tee hee, i frickin love little chatty shit when i log in
 fortune
+
+##
+# Your previous /Users/joho/.profile file was backed up as /Users/joho/.profile.macports-saved_2009-09-14_at_14:10:00
+##
+
+# MacPorts Installer addition on 2009-09-14_at_14:10:00: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
