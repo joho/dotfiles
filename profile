@@ -41,6 +41,7 @@ source ~/.git-completion.sh
 alias la='ls -la'
 alias cowboy='git push && cap deploy'
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
+alias mma='cd ~/source/envato/marketplace && mate app config db features spec compass Rakefile README Capfile lib vendor/plugins stories'
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
