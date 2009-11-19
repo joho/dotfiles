@@ -2,6 +2,7 @@
 require 'rubygems' rescue nil
 require 'wirble'
 require 'hirb'
+require 'pp'
 
 #load wirble
 Wirble.init
@@ -20,5 +21,15 @@ class Object
   
   def my_methods
     (self.methods - Object.methods).sort
+  end
+
+  def tap
+    yield self
+    self
+  end
+
+  def tapp
+    pp self
+    self
   end
 end

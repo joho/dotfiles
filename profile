@@ -1,4 +1,4 @@
-PATH="~/scripts:~/.rvm/bin/:~/bin:~/.gem/ruby/1.8/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:$PATH"
+PATH="~/scripts:~/.rvm/bin/:~/bin:~/.gem/ruby/1.8/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:$PATH"
 export PATH
 
 # get nice colours
@@ -42,6 +42,7 @@ alias la='ls -la'
 alias cowboy='git push && cap deploy'
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias restart_nginx='sudo /opt/nginx/sbin/nginx -s stop && sudo /opt/nginx/sbin/nginx'
+alias mma='cd ~/source/envato/marketplace && mate app config db public features spec compass Rakefile README Capfile lib vendor/plugins stories'
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
