@@ -13,10 +13,14 @@ EDITOR='mate -w'; export EDITOR
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
 # git branch in prompt
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "!!"
 }
- 
+
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1)$(parse_git_dirty)/"
+}
+
 function proml {
   local        BLUE="\[\033[0;34m\]"
   local         RED="\[\033[0;31m\]"
@@ -41,7 +45,8 @@ source ~/.git-completion.sh
 alias la='ls -la'
 alias cowboy='git push && cap deploy'
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
-alias mma='cd ~/source/envato/marketplace && mate app config db public features spec compass Rakefile README Capfile lib vendor/plugins stories'
+alias mm='cd ~/source/envato/marketplace'
+alias mma='mm && mate app config db public features spec compass Rakefile README Capfile lib vendor/plugins'
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
