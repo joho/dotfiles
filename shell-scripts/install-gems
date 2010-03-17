@@ -1,0 +1,8 @@
+#!/usr/bin/ruby
+File.open '~/.gem_list', 'r' do |f|
+  f.each_line do |l|
+    name, version = l.split(' ')
+    version = version.gsub(/\(|\)/, '')
+    system "gem install #{name} --version '#{version}'"
+  end
+end
