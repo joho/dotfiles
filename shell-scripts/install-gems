@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-File.open '~/.gem_list', 'r' do |f|
+File.open(File.expand_path('~/.gem_list'), 'r') do |f|
   f.each_line do |l|
     name, version = l.split(' ')
     version = version.gsub(/\(|\)/, '')
