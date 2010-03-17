@@ -1,4 +1,5 @@
-PATH="~/scripts:~/.rvm/bin/:~/bin:~/.gem/ruby/1.8/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:$PATH"
+# ~/.gem/ruby/1.8/bin:
+PATH="~/scripts:~/.rvm/bin/:~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:$PATH"
 export PATH
 
 # get nice colours
@@ -10,7 +11,7 @@ export LSCOLORS=DxFxCxDxDxegedabagacad
 EDITOR='mate -w'; export EDITOR
 
 # set up RVM
-if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+if [ -s ~/.bash_rc ] ; then source ~/.bash_rc ; fi
 
 # git branch in prompt
 function parse_git_dirty {
@@ -47,6 +48,7 @@ alias cowboy='git push && cap deploy'
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias mm='cd ~/source/envato/marketplace'
 alias mma='mm && mate app config db public features spec compass Rakefile README Capfile lib vendor/plugins'
+alias restart_nginx='sudo kill -HUP `cat /var/run/nginx.pid`'
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
@@ -77,6 +79,18 @@ irb
     fi
 fi
 }
+
+# tab completion for mategem
+_mategem()
+{
+    local curw
+    COMPREPLY=()
+    curw=${COMP_WORDS[COMP_CWORD]}
+    local gems="$(gem environment gemdir)/gems"
+    COMPREPLY=($(compgen -W '$(ls $gems)' -- $curw));
+    return 0
+}
+complete -F _mategem -o dirnames mategem
 
 # tee hee, i frickin love little chatty shit when i log in
 fortune
