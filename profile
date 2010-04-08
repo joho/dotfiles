@@ -50,6 +50,7 @@ alias mm='cd ~/source/envato/marketplace'
 alias mma='mm && mate app config db public features spec compass Rakefile README Capfile lib vendor/plugins'
 alias restart_nginx='sudo kill -HUP `cat /var/run/nginx.pid`'
 alias fucking_eject='drutil tray eject'
+alias gp="git push origin master && marketplace-ci update"
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
