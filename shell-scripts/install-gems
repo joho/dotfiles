@@ -4,7 +4,7 @@ module GemInstaller
     name, gem_versions = get_name_and_versions(gem_list_line)
     
     gem_versions.each do |gem_version|
-      system "gem install #{name} --version '#{gem_version}'"
+      system "gem install #{name} --version '#{gem_version}' --no-rdoc --no-ri"
     end
   end
   
