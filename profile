@@ -1,4 +1,4 @@
-PATH="~/scripts:~/.rvm/bin/:~/bin:~/.gem/ruby/1.8/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:$PATH"
+PATH="~/scripts:~/.rvm/bin/:~/bin:~/.gem/ruby/1.8/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin/:$PATH"
 export PATH
 
 # get nice colours
