@@ -32,7 +32,9 @@
   cav = commit -a -v
   co = checkout
   wtf = !git-wtf
-[merge]
-  tool = opendiff
+[core]
+	editor = mate -w
+[gui]
+	fontdiff = -family Inconsolata -size 14 -weight normal -slant roman -underline 0 -overstrike 0
 [push]
   default = current
