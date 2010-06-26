@@ -51,6 +51,7 @@ alias mma='mm && mate app config db public features spec compass Rakefile README
 alias restart_nginx='sudo kill -HUP `cat /var/run/nginx.pid`'
 alias fucking_eject='drutil tray eject'
 alias gp="git push origin master && marketplace-ci update"
+alias remigrate=`VERSION=\!^ rake db:migrate:down && VERSION=\!^ rake db:migrate:up`
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
