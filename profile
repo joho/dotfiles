@@ -11,7 +11,7 @@ export LSCOLORS=DxFxCxDxDxegedabagacad
 EDITOR='mate -w'; export EDITOR
 
 # set up RVM
-if [ -s ~/.bash_rc ] ; then source ~/.bash_rc ; fi
+# if [ -s ~/.bash_rc ] ; then source ~/.bash_rc ; fi
 
 # git branch in prompt
 function parse_git_dirty {
@@ -47,7 +47,7 @@ alias la='ls -la'
 alias cowboy='git push && cap deploy'
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias mm='cd ~/source/envato/marketplace'
-alias ma='mate app config db public features spec compass Rakefile README Capfile lib vendor/plugins'
+alias ma='mate app config db public features spec compass lib vendor/plugins docs Rakefile README Capfile Gemfile'
 alias mma='mm && ma'
 alias restart_nginx='sudo kill -HUP `cat /var/run/nginx.pid`'
 alias fucking_eject='drutil tray eject'
