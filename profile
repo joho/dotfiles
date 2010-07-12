@@ -8,7 +8,7 @@ export CLICOLOR=1
 export LSCOLORS=DxFxCxDxDxegedabagacad
 
 # set textmate as the editor of choice
-EDITOR='mate -w'; export EDITOR
+EDITOR='mvim -f'; export EDITOR
 
 # set up RVM
 if [ -s ~/.bash_rc ] ; then source ~/.bash_rc ; fi
@@ -47,8 +47,8 @@ alias la='ls -la'
 alias cowboy='git push && cap deploy'
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias mm='cd ~/source/envato/marketplace'
-alias ma='mate app config db public features spec compass Rakefile README Capfile lib vendor/plugins'
-alias mma='mm && ma'
+alias mateapp='mate app config db public features spec compass Rakefile README Capfile lib vendor/plugins'
+alias mma='mm && mvim .'
 alias restart_nginx='sudo kill -HUP `cat /var/run/nginx.pid`'
 alias fucking_eject='drutil tray eject'
 alias gp="git push origin master && marketplace-ci update"
