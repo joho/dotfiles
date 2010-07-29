@@ -13,6 +13,10 @@ set expandtab           " always use spaces not tabs
 set incsearch           " do incremental searching
 set hlsearch            " highlight search results
 
+" Set up the status line
+set laststatus=2        " Always show it.
+set statusline=%([%M%R%H%W]\ \ %)Line:\ %l/%L\ %{fugitive#statusline()}\ \ %f%=%{&filetype}\ \ Column:\ %c
+
 " macvim shit
 if has("gui_macvim")
   set mousehide                   " Hide the mouse when typing text.
