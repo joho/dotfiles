@@ -1,5 +1,5 @@
 # ~/.gem/ruby/1.8/bin:
-PATH="~/scripts:~/.rvm/bin/:~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin/:$PATH"
+PATH="~/scripts:~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin/:$PATH"
 export PATH
 
 # get nice colours
@@ -11,7 +11,7 @@ export LSCOLORS=DxFxCxDxDxegedabagacad
 EDITOR='mvim -f'; export EDITOR
 
 # set up RVM
-if [ -s ~/.bash_rc ] ; then source ~/.bash_rc ; fi
+if [ -s ~/.bashrc ] ; then source ~/.bashrc ; fi
 
 # git branch in prompt
 function parse_git_dirty {
@@ -47,12 +47,13 @@ alias la='ls -la'
 alias cowboy='git push && cap deploy'
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias mm='cd ~/source/envato/marketplace'
-alias mateapp='mate app config db public features spec compass Rakefile README Capfile lib vendor/plugins'
+alias mateapp='mate app config db public features spec compass lib vendor/plugins docs Rakefile README Capfile Gemfile'
 alias mma='mm && mvim .'
 alias restart_nginx='sudo kill -HUP `cat /var/run/nginx.pid`'
 alias fucking_eject='drutil tray eject'
 alias gp="git push origin master && marketplace-ci update"
 alias bb="babushka"
+alias remigrate="VERSION=\!^ rake db:migrate:down && VERSION=\!^ rake db:migrate:up"
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
