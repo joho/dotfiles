@@ -52,7 +52,7 @@ alias mma='mm && mvim .'
 alias restart_nginx='sudo kill -HUP `cat /var/run/nginx.pid`'
 alias fucking_eject='drutil tray eject'
 alias gp="git push origin master && marketplace-ci update"
-alias remigrate=`VERSION=\!^ rake db:migrate:down && VERSION=\!^ rake db:migrate:up`
+alias bb="babushka"
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
@@ -69,20 +69,6 @@ complete -F _p p
 
 # stop ctrl-D logging me out
 shopt -s -o ignoreeof
-
-# give me script/console or irb depending
-function sc {
-  if [ -x script/console ]; then
-script/console
-  else
-sinatra_rb=`egrep -l "^require.+sinatra.$" *.rb 2>/dev/null`
-    if [ -e $sinatra_rb ]; then
-irb -r $sinatra_rb
-    else
-irb
-    fi
-fi
-}
 
 # tab completion for mategem
 _mategem()
