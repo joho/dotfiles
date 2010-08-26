@@ -44,16 +44,20 @@ source ~/.git-completion.sh
 
 # aliases
 alias la='ls -la'
+alias ll='ls -l'
 alias cowboy='git push && cap deploy'
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias mm='cd ~/source/envato/marketplace'
 alias mateapp='mate app config db public features spec compass lib vendor/plugins docs Rakefile README Capfile Gemfile'
 alias mma='mm && mvim .'
 alias restart_nginx='sudo kill -HUP `cat /var/run/nginx.pid`'
-alias fucking_eject='drutil tray eject'
 alias gp="git push origin master && marketplace-ci update"
 alias bb="babushka"
 alias remigrate="VERSION=\!^ rake db:migrate:down && VERSION=\!^ rake db:migrate:up"
+
+# retarded mac aliases to fix dumb shit
+alias restart_expose="killall Dock"
+alias fucking_eject='drutil tray eject'
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
