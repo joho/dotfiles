@@ -25,7 +25,7 @@
 [alias]
   track = !sh -c 'git branch --track "$0" "origin/$0" && git checkout "$0"'
   ignored = "!git ls-files --others --exclude-standard"
-  delete = !sh -c 'git branch -D "$0"; git push github ":$0"'
+  delete = !sh -c 'git branch -D "$0" && git push origin ":$0"'
   find-branch = !sh -c 'git branch -a | grep $0'
   st = status
   pr = pull --rebase
