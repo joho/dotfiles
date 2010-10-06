@@ -22,6 +22,10 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1)$(parse_git_dirty)/"
 }
 
+function plain_git_branch {
+  git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
+}
+  
 function proml {
   local        BLUE="\[\033[0;34m\]"
   local         RED="\[\033[0;31m\]"
@@ -52,10 +56,11 @@ alias mateapp='mate app config db public features spec compass lib vendor/plugin
 alias mma='mm && mvim .'
 alias restart_nginx='sudo kill -HUP `cat /var/run/nginx.pid`'
 alias gp="git push origin master && marketplace-ci update"
+alias gpr='git fetch origin && git rebase -p origin/$(plain_git_branch) && git show'
 alias bb="babushka"
 alias remigrate="VERSION=\!^ rake db:migrate:down && VERSION=\!^ rake db:migrate:up"
 
-# retarded mac aliases to fix dumb shit
+#retarded mac aliases to fix dumb shit
 alias restart_expose="killall Dock"
 alias fucking_eject='drutil tray eject'
 
