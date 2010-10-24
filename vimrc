@@ -7,11 +7,14 @@ set nocompatible
 call pathogen#runtime_append_all_bundles()
 
 syntax on                               " duh
-set autoindent nosmartindent nocindent  " go for simple autoindenting
+set autoindent smartindent cindent  " go for all indenting, all the time
 set ts=2 sw=2 sts=2     " default to 2 space tabs
 set expandtab           " always use spaces not tabs
 set incsearch           " do incremental searching
 set hlsearch            " highlight search results
+
+" write swapfiles out to temp instead of polluting working directory
+set directory=~/tmp//
 
 " Set up the status line
 set laststatus=2        " Always show it.
@@ -45,8 +48,8 @@ vnoremap > >gv
 " FILETYPE SHIT
 " =============
 
-" Enable file type detection, but disable smart indenting.
+" Enable file type detection
 filetype plugin on
-filetype indent off
+filetype indent on
 
 " end filetype shit
