@@ -56,7 +56,7 @@ alias mateapp='mate app config db public features spec compass lib vendor/plugin
 alias mma='mm && mvim .'
 alias restart_nginx='sudo kill -HUP `cat /var/run/nginx.pid`'
 alias gp="git push origin master && marketplace-ci update"
-alias gpr='git fetch origin && git rebase -p origin/$(plain_git_branch) && git show'
+alias gpr='git fetch origin && git rebase -p origin/$(plain_git_branch)'
 alias bb="babushka"
 alias remigrate="VERSION=\!^ rake db:migrate:down && VERSION=\!^ rake db:migrate:up"
 
