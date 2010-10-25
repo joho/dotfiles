@@ -80,6 +80,10 @@ complete -F _p p
 # stop ctrl-D logging me out
 shopt -s -o ignoreeof
 
+# allow me to ctrl-z, ctrl-f for some retro multitasking
+export HISTIGNORE="fg*"
+bind '"\C-f": "fg %-\n"'
+
 # tab completion for mategem
 _mategem()
 {
