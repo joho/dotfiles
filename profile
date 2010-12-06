@@ -84,18 +84,6 @@ shopt -s -o ignoreeof
 export HISTIGNORE="fg*"
 bind '"\C-f": "fg %-\n"'
 
-# tab completion for mategem
-_mategem()
-{
-    local curw
-    COMPREPLY=()
-    curw=${COMP_WORDS[COMP_CWORD]}
-    local gems="$(gem environment gemdir)/gems"
-    COMPREPLY=($(compgen -W '$(ls $gems)' -- $curw));
-    return 0
-}
-complete -F _mategem -o dirnames mategem
-
 # set up the env variables for the ec2 command line tools
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
