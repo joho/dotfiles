@@ -4,6 +4,7 @@ set nocompatible
 
 " Load pathogen for managing all those pesky plugins.
 " Load this first so ftdetect in bundles works properly.
+call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
 syntax on                               " duh
