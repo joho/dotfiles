@@ -20,6 +20,9 @@ set directory=~/tmp//
 set laststatus=2        " Always show it.
 set statusline=%([%M%R%H%W]\ \ %)Line:\ %l/%L\ %{fugitive#statusline()}\ \ %f%=%{&filetype}\ \ Column:\ %c
 
+" ignoring certain file types
+set wildignore+=*.o,*.obj,.git,.DS_Store,*.swp
+
 " macvim shit
 if has("gui_macvim")
   set mousehide                   " Hide the mouse when typing text.
@@ -34,6 +37,9 @@ if has("gui_macvim")
   " Better colours for folding.
   highlight Folded guifg=#EEEEEE guibg=#333333
 
+  " Keymapping for command-T plugin
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> :CommandT<CR>
 endif
 
 " Keymapping shit
@@ -42,6 +48,8 @@ endif
 " Reselect the visual area when changing indenting in visual mode.
 vnoremap < <gv
 vnoremap > >gv
+
+nmap :gt<CR> :CommandT<CR>
 
 " end keymapping
 

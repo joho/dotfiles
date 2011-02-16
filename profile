@@ -37,7 +37,7 @@ function proml {
   local BLINK_GREEN="\[\033[5;32m\]"
  
 PS1="$RED\h$GREEN[\t]$RED:\w$GREEN\$(parse_git_branch)\
-\n\$ $WHITE"
+\n♺ $WHITE"
 PS2='> '
 PS4='+ '
 }
@@ -59,6 +59,7 @@ alias gp="git push origin master && marketplace-ci update"
 alias gpr='git fetch origin && git rebase -p origin/$(plain_git_branch)'
 alias bb="babushka"
 alias remigrate="VERSION=\!^ rake db:migrate:down && VERSION=\!^ rake db:migrate:up"
+alias cuke="bundle exec cucumber"
 
 #retarded mac aliases to fix dumb shit
 alias restart_expose="killall Dock"
