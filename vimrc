@@ -44,6 +44,21 @@ endif
 vnoremap < <gv
 vnoremap > >gv
 
+" I'm trying to learn to avoid the arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" sick of holding shift to do everything!
+nnoremap ; :
+
+" easy way to clear highlighted searches
+nmap <silent> ,/ :nohlsearch<CR>
+
+" i want an easier to use leader!
+let mapleader=","
+
 " end keymapping
 
 " FILETYPE SHIT
