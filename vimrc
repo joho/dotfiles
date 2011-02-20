@@ -4,6 +4,7 @@ set nocompatible
 
 " Load pathogen for managing all those pesky plugins.
 " Load this first so ftdetect in bundles works properly.
+call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
 syntax on                               " duh
@@ -49,7 +50,23 @@ endif
 vnoremap < <gv
 vnoremap > >gv
 
+" a shortcut for command-t
 nmap :gt<CR> :CommandT<CR>
+
+" I'm trying to learn to avoid the arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" sick of holding shift to do everything!
+nnoremap ; :
+
+" easy way to clear highlighted searches
+nmap <silent> ,/ :nohlsearch<CR>
+
+" i want an easier to use leader!
+let mapleader=","
 
 " end keymapping
 
