@@ -53,12 +53,6 @@ vnoremap > >gv
 " a shortcut for command-t
 nmap :gt<CR> :CommandT<CR>
 
-" I'm trying to learn to avoid the arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-
 " sick of holding shift to do everything!
 nnoremap ; :
 
