@@ -4,3 +4,5 @@ ln -s $PWD/profile ~/.bash_profile
 ln -s $PWD/shell-scripts ~/scripts
 ln -s $PWD/rdbugrc ~/.rdbugrc
 ln -s $PWD/irbrc ~/.irbrc
+ln -s $PWD/gitconfig ~/.gitconfig
+ln -s $PWD/git-completion.sh ~/.git-completion.sh
