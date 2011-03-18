@@ -10,8 +10,6 @@ export LSCOLORS=DxFxCxDxDxegedabagacad
 # set textmate as the editor of choice
 EDITOR='mvim -f'; export EDITOR
 
-# set up RVM
-if [ -s ~/.bashrc ] ; then source ~/.bashrc ; fi
 
 # git branch in prompt
 function parse_git_dirty {
@@ -97,3 +95,5 @@ fi
 # tee hee, i frickin love little chatty shit when i log in
 fortune
 
+# set up RVM
+if [ -s ~/.bashrc ] ; then source ~/.bashrc ; fi
