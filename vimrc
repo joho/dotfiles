@@ -15,7 +15,7 @@ set incsearch           " do incremental searching
 set hlsearch            " highlight search results
 
 " write swapfiles out to temp instead of polluting working directory
-set directory=~/tmp//
+set directory=/tmp/
 
 " Set up the status line
 set laststatus=2        " Always show it.
