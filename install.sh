@@ -6,3 +6,4 @@ ln -s $PWD/rdbugrc ~/.rdbugrc
 ln -s $PWD/irbrc ~/.irbrc
 ln -s $PWD/gitconfig ~/.gitconfig
 ln -s $PWD/git-completion.sh ~/.git-completion.sh
+ln -s $PWD/gemrc ~/.gemrc
