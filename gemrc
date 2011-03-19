@@ -1,0 +1,9 @@
+--- 
+:benchmark: false
+:verbose: true
+gem: --no-ri --no-rdoc
+:update_sources: true
+:backtrace: false
+:bulk_threshold: 1000
+rdoc: --inline-source --line-numbers --format=html --template=hanna
+
