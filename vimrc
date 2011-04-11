@@ -24,6 +24,13 @@ set statusline=%([%M%R%H%W]\ \ %)Line:\ %l/%L\ %{fugitive#statusline()}\ \ %f%=%
 " ignoring certain file types
 set wildignore+=*.o,*.obj,.git,.DS_Store,*.swp
 
+" automatically create parent dirs on write buffer - http://stackoverflow.com/questions/4292733/vim-creating-parent-directories-on-save
+augroup BWCCreateDir
+  au!
+  autocmd BufWritePre * if expand("<afile>")!~#'^\w\+:/' && !isdirectory(expand("%:h")) | execute "silent! !mkdir -p %:h" | redraw! | endif
+augroup END
+
+
 " macvim shit
 if has("gui_macvim")
   set mousehide                   " Hide the mouse when typing text.
