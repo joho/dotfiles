@@ -33,9 +33,10 @@ function proml {
   local       WHITE="\[\033[1;37m\]"
   local  LIGHT_GRAY="\[\033[0;37m\]"
   local BLINK_GREEN="\[\033[5;32m\]"
+  local NO_COLOUR="\[\033[0m\]"
  
 PS1="$RED\h$GREEN[\t]$RED:\w$GREEN\$(parse_git_branch)\
-\n♺ $WHITE"
+\n♺ $NO_COLOUR"
 PS2='> '
 PS4='+ '
 }
