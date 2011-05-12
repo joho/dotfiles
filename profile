@@ -46,8 +46,6 @@ proml
 source ~/.git-completion.sh
 
 # aliases
-alias la='ls -la'
-alias ll='ls -l'
 alias cowboy='git push && cap deploy'
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias mm='cd ~/source/envato/marketplace'
@@ -62,7 +60,7 @@ alias cuke="bundle exec cucumber"
 
 #retarded mac aliases to fix dumb shit
 alias restart_expose="killall Dock"
-alias fucking_eject='drutil tray eject'
+alias fucking_eject="drutil tray eject"
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
