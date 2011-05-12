@@ -45,13 +45,24 @@ if has("gui_macvim")
   " Better colours for folding.
   highlight Folded guifg=#EEEEEE guibg=#333333
 
-  " Keymapping for command-T plugin
-  macmenu &File.New\ Tab key=<nop>
-  map <D-t> :CommandT<CR>
 endif
+
+" ------
+" DAS window sizing suggestion
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will
+" fail.
+set winheight=7
+set winminheight=7
+set winheight=999
+" ------
 
 " Keymapping shit
 " =========
+
+" i want an easier to use leader!
+let mapleader = ","
 
 " Reselect the visual area when changing indenting in visual mode.
 vnoremap < <gv
@@ -63,11 +74,21 @@ nmap :gt<CR> :CommandT<CR>
 " sick of holding shift to do everything!
 nnoremap ; :
 
-" easy way to clear highlighted searches
-nmap <silent> ,/ :nohlsearch<CR>
+" shortcut for switch to last file
+map <leader><leader> <C-^>
 
-" i want an easier to use leader!
-let mapleader=","
+" easy way to clear highlighted searches
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Open files with <leader>f
+map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+" Open files, limited to the directory of the current file, with <leader>gf
+" This requires the %% mapping found below.
+map <leader>gf :CommandTFlush<cr>\|:CommandT %%<cr>
+
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
 
 " end keymapping
 
