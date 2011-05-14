@@ -2,6 +2,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+set hidden
+
 " Load pathogen for managing all those pesky plugins.
 " Load this first so ftdetect in bundles works properly.
 call pathogen#helptags()
