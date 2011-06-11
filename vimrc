@@ -71,7 +71,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " sick of holding shift to do everything!
-nnoremap ; :
+cnoremap ; :
 
 " shortcut for switch to last file
 map <leader><leader> <C-^>
