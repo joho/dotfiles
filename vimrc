@@ -79,6 +79,9 @@ map <leader><leader> <C-^>
 " easy way to clear highlighted searches
 nmap <silent> <leader>/ :nohlsearch<CR>
 
+" bog standard command t
+map <leader>t :CommandT<cr>
+
 " Open files with <leader>f
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 " Open files, limited to the directory of the current file, with <leader>gf
