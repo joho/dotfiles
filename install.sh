@@ -1,5 +1,5 @@
 ln -sf $PWD/vimrc ~/.vimrc
-ln -sf $PWD/bashrc ~/.bash_rc
+ln -sf $PWD/bashrc ~/.bashrc
 ln -sf $PWD/profile ~/.bash_profile
 ln -sf $PWD/shell-scripts ~/scripts
 ln -sf $PWD/rdbugrc ~/.rdbugrc
