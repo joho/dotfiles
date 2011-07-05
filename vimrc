@@ -107,6 +107,10 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
 
+" pete's run rspec in iterm thingo
+" https://github.com/notahat/dotfiles/blob/master/vim/plugin/iterm.vim
+map <D-r> :Spec<CR>
+
 " end keymapping
 
 " FILETYPE SHIT
