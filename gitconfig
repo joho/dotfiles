@@ -53,3 +53,4 @@
   
 [core]
 	mergeoptions = --no-ff
+	autocrlf = true
