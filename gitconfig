@@ -49,8 +49,6 @@
   insteadOf = "gist:"
 [url "git@heroku.com:"]
   insteadOf = "heroku:"
-
-  
 [core]
 	mergeoptions = --no-ff
-	autocrlf = true
+	autocrlf = false
