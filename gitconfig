@@ -51,4 +51,3 @@
   insteadOf = "heroku:"
 [core]
 	mergeoptions = --no-ff
-	autocrlf = false
