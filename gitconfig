@@ -19,7 +19,7 @@
   changed = green
   untracked = cyan
 [apply]
-	whitespace = nowarn
+	whitespace = strip
 [branch]
   autosetupmerge = true
 [alias]
@@ -51,3 +51,4 @@
   insteadOf = "heroku:"
 [core]
 	mergeoptions = --no-ff
+  autocrlf = input
