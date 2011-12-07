@@ -32,23 +32,6 @@ augroup BWCCreateDir
   autocmd BufWritePre * if expand("<afile>")!~#'^\w\+:/' && !isdirectory(expand("%:h")) | execute "silent! !mkdir -p %:h" | redraw! | endif
 augroup END
 
-
-" macvim shit
-if has("gui_macvim")
-  set mousehide                   " Hide the mouse when typing text.
-  set guioptions=egm              " Show tabs, hide toolbar and scrollbar.
-  set fuoptions=maxvert,maxhorz   " Go to full width and height in full screen mode.
-
-  set gfn=Inconsolata:h16         " Inconsolata 18px for the font
-  set linespace=0                 " 0 pixels between lines
-
-  colorscheme railscasts
-
-  " Better colours for folding.
-  highlight Folded guifg=#EEEEEE guibg=#333333
-
-endif
-
 " ------
 " DAS window sizing suggestion
 set winwidth=84
