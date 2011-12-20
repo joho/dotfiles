@@ -6,8 +6,15 @@ TERM=xterm-color; export TERM
 export CLICOLOR=1
 export LSCOLORS=DxFxCxDxDxegedabagacad
 
-# set textmate as the editor of choice
-EDITOR='mvim -f'; export EDITOR
+# OS specific stuff (like editor)
+case $(uname -s) in
+  Darwin)
+    export EDITOR='gvim -f'
+  ;;
+  Linux)
+    export EDITOR='mvim -f'
+  ;;
+esac
 
 # git branch in prompt
 function parse_git_dirty {
