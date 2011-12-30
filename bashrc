@@ -67,6 +67,7 @@ alias cuke="bundle exec cucumber"
 #retarded mac aliases to fix dumb shit
 alias restart_expose="killall Dock"
 alias fucking_eject="drutil tray eject"
+alias fucking_fix_dns="sudo killall mDNSResponder"
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
