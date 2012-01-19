@@ -1,3 +1,6 @@
+# tee hee, i frickin love little chatty shit when i log in
+fortune
+
 PATH="~/scripts:~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin/:$PATH"
 export PATH
 
@@ -99,9 +102,6 @@ then
   export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
   export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-57419/jars"
 fi
-
-# tee hee, i frickin love little chatty shit when i log in
-fortune
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
