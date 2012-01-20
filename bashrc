@@ -72,6 +72,9 @@ alias restart_expose="killall Dock"
 alias fucking_eject="drutil tray eject"
 alias fucking_fix_dns="sudo killall mDNSResponder"
 
+#likeaboss
+alias fml="open /Applications/Microsoft\ Office\ 2008/Microsoft\ Excel.app"
+
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
 
