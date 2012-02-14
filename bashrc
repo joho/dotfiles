@@ -106,7 +106,8 @@ then
   export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-57419/jars"
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
 
 function rmb {
   current_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
