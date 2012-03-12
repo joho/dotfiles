@@ -54,17 +54,13 @@ proml
 source ~/.git-completion.sh
 
 # aliases
-alias cowboy='git push && cap deploy'
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
-alias mm='cd ~/source/envato/marketplace'
-alias mateapp='mate app config db public features spec compass lib vendor/plugins docs Rakefile README Capfile Gemfile'
+alias mm='cd ~/source/goodfilms/site'
 alias mma='mm && mvim .'
 alias restart_nginx='sudo kill -HUP `cat /var/run/nginx.pid`'
 alias gp="git push origin $(plain_git_branch)"
 alias gpr='git fetch origin && git rebase -p origin/$(plain_git_branch)'
 alias gprp="gp && gpr"
-alias bb="babushka"
-alias remigrate="VERSION=\!^ rake db:migrate:down && VERSION=\!^ rake db:migrate:up"
 alias cuke="bundle exec cucumber"
 
 #retarded mac aliases to fix dumb shit
