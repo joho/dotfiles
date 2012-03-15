@@ -103,4 +103,7 @@ map <D-r> :Spec<CR>
 filetype plugin on
 filetype indent on
 
+" custom hax to get ruby syntax highlighting in files that don't end in .rb
+" Thanks: http://dailyvim.tumblr.com/post/1262764095/additional-ruby-syntax-highlighting
+au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 " end filetype shit
