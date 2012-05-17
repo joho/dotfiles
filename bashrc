@@ -57,11 +57,10 @@ source ~/.git-completion.sh
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias mm='cd ~/source/goodfilms/site'
 alias mma='mm && mvim .'
-alias restart_nginx='sudo kill -HUP `cat /var/run/nginx.pid`'
 alias gp="git push origin $(plain_git_branch)"
 alias gpr='git fetch origin && git rebase -p origin/$(plain_git_branch)'
-alias gprp="gp && gpr"
-alias cuke="bundle exec cucumber"
+alias spec="bin/rspec"
+alias cowboy="git push && bin/cap production deploy"
 
 #retarded mac aliases to fix dumb shit
 alias restart_expose="killall Dock"
