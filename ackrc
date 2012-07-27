@@ -1,5 +1,6 @@
 --type-set=haml=.haml
 --ignore-dir=migrate
+--ignore-dir=tmp
 --ignore-dir=log
 --type-add
 js=.coffee
