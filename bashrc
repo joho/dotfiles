@@ -1,7 +1,7 @@
 # tee hee, i frickin love little chatty shit when i log in
 fortune
 
-PATH="~/scripts:~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin/:$PATH"
+PATH="~/scripts:~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin:$PATH"
 export PATH
 
 # get nice colours
