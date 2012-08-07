@@ -65,7 +65,7 @@ alias cowboy="git push && bin/cap production deploy"
 #retarded mac aliases to fix dumb shit
 alias restart_expose="killall Dock"
 alias fucking_eject="drutil tray eject"
-alias fucking_fix_dns="sudo killall mDNSResponder"
+alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
 
 # project shortcuts with completion
 export PROJECTS="$HOME/source"
