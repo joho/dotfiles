@@ -190,9 +190,6 @@ defaults write com.twitter.twitter-mac openLinksInBackground -bool true
 # Allow closing the ‘new tweet’ window by pressing `Esc`
 defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
 
-# Hide the app in the background if it’s not the front-most window
-defaults write com.twitter.twitter-mac HideInBackground -bool true
-
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
