@@ -98,8 +98,10 @@ then
   export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-57419/jars"
 fi
 
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
+if [[ -d $HOME/.rbenv/bin ]] ; then
+  export PATH=$HOME/.rbenv/bin:$PATH
+  eval "$(rbenv init -)"
+fi
 
 function rmb {
   current_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
