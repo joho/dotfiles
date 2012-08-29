@@ -87,17 +87,6 @@ shopt -s -o ignoreeof
 export HISTIGNORE="fg*"
 bind '"\C-f": "fg %-\n"'
 
-export ACK_OPTIONS="--nosql --type-set cucumber=.feature --type-set sass=.sass" # Make ack ignore sql dumps, and search cucumber features.
-
-# set up the env variables for the ec2 command line tools
-export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
-if [ -f $HOME/.ec2 ]
-then
-  export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
-  export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
-  export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-57419/jars"
-fi
-
 if [[ -d $HOME/.rbenv/bin ]] ; then
   export PATH=$HOME/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
