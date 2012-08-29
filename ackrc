@@ -1,9 +1,9 @@
 --nosql
 --ignore-dir=migrate
+--ignore-dir=vendor
 --ignore-dir=tmp
 --ignore-dir=log
 --type-add=js=.coffee
---type-add=ruby=.rake
 --type-set=cucumber=.feature
 --type-set=sass=.sass
 --type-set=haml=.haml
