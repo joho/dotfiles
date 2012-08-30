@@ -18,6 +18,8 @@
   added = yellow
   changed = green
   untracked = cyan
+[push]
+  default = current
 [apply]
   whitespace = strip
 [branch]
