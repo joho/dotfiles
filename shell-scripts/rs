@@ -1,1 +1,0 @@
-ssh -A marketplace@184.106.5.$1
