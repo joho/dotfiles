@@ -36,3 +36,4 @@
   default = current
 [core]
   mergeoptions = --no-ff
+  pager = less -r
