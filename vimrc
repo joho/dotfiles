@@ -13,6 +13,8 @@ syntax on                               " duh
 set autoindent smartindent cindent  " go for all indenting, all the time
 set incsearch           " do incremental searching
 set hlsearch            " highlight search results
+set ts=2 sw=2 sts=2     " default to 2 space tabs
+set expandtab           " always use spaces not tabs
 
 " write swapfiles out to temp instead of polluting working directory
 set directory=/tmp/
@@ -104,13 +106,13 @@ filetype indent on
 " custom hax to get ruby syntax highlighting in files that don't end in .rb
 " Thanks: http://dailyvim.tumblr.com/post/1262764095/additional-ruby-syntax-highlighting
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
 " golang specific stuff
 
 " autorun Fmt before save
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+" tabs not spaces for go
+autocmd FileType go setlocal noexpandtab
 
 " end filetype shit
