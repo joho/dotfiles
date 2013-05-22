@@ -3,6 +3,7 @@
 --ignore-dir=vendor
 --ignore-dir=tmp
 --ignore-dir=log
+--ignore-dir=public/source_maps
 --type-add=js=.coffee
 --type-set=cucumber=.feature
 --type-set=sass=.sass

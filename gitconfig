@@ -34,6 +34,9 @@
   co = checkout
   wtf = !git-wtf
   default = current
+	ctags = !.git/hooks/ctags
 [core]
   mergeoptions = --no-ff
   pager = less -r
+[init]
+	templatedir = ~/.git_template

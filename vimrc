@@ -24,7 +24,7 @@ set laststatus=2        " Always show it.
 set statusline=%([%M%R%H%W]\ \ %)Line:\ %l/%L\ %{fugitive#statusline()}\ \ %f%=%{&filetype}\ \ Column:\ %c
 
 " ignoring certain file types
-set wildignore+=*.o,*.obj,.git,.DS_Store,*.swp,vendor/bundle/**,tmp/**
+set wildignore+=*.o,*.obj,.git,.DS_Store,*.swp,vendor/bundle/**,tmp/**,public/source_maps/**
 
 " automatically create parent dirs on write buffer - http://stackoverflow.com/questions/4292733/vim-creating-parent-directories-on-save
 augroup BWCCreateDir
