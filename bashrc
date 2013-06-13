@@ -65,7 +65,7 @@ alias gp="git push origin $(plain_git_branch)"
 alias gpr='git fetch origin && git rebase -p origin/$(plain_git_branch)'
 alias spec="bin/rspec"
 alias cowboy="git push && bin/cap production deploy"
-alias killruby="ps aux | grep [r]uby | awk '{print $2}' | xargs kill -9"
+alias killruby="ps aux | grep [r]uby | awk '{print \$2}' | xargs kill -9"
 
 #retarded mac aliases to fix dumb shit
 alias restart_expose="killall Dock"
