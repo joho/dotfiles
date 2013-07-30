@@ -1,5 +1,5 @@
 # tee hee, i frickin love little chatty shit when i log in
-fortune
+fortune | cowsay
 
 # set go workspace
 export GOPATH=$HOME/source/go
