@@ -99,3 +99,5 @@ fi
 
 # use vmware by default for vagrant
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
+
+# if kernel_task is going weird read http://www.rdoxenham.com/?p=259 (maybe make an alias to help)
