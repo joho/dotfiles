@@ -96,3 +96,6 @@ if [[ -d $HOME/.rbenv/bin ]] ; then
   export PATH=$HOME/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
 fi
+
+# use vmware by default for vagrant
+export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
