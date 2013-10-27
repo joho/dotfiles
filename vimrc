@@ -114,6 +114,6 @@ au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " tabs not spaces for go
-autocmd FileType go setlocal noexpandtab
+autocmd FileType go setlocal noexpandtab ts=4 tw=0
 
 " end filetype shit
