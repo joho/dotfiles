@@ -16,7 +16,7 @@ export LSCOLORS=DxFxCxDxDxegedabagacad
 # OS specific stuff (like editor)
 case $(uname -s) in
   Darwin)
-    export EDITOR='mvim -f'
+    export EDITOR='subl -w'
   ;;
   Linux)
     export EDITOR='gvim -f'
