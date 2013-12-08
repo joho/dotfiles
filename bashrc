@@ -59,13 +59,14 @@ source ~/.git-completion.sh
 
 # aliases
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
-alias mm='cd ~/source/goodfilms/site'
-alias mma='mm && mvim .'
 alias gp="git push origin $(plain_git_branch)"
 alias gpr='git fetch origin && git rebase -p origin/$(plain_git_branch)'
 alias spec="bin/rspec"
 alias cowboy="git push && bin/cap production deploy"
 alias killruby="ps aux | grep [r]uby | awk '{print \$2}' | xargs kill -9"
+
+# work stuff
+alias 99vm="cd ~/Projects/99designs/vmconfig && vagrant ssh"
 
 #retarded mac aliases to fix dumb shit
 alias restart_expose="killall Dock"
@@ -92,12 +93,12 @@ shopt -s -o ignoreeof
 export HISTIGNORE="fg*"
 bind '"\C-f": "fg %-\n"'
 
-if [[ -d $HOME/.rbenv/bin ]] ; then
-  export PATH=$HOME/.rbenv/bin:$PATH
-  eval "$(rbenv init -)"
-fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # use vmware by default for vagrant
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
 # if kernel_task is going weird read http://www.rdoxenham.com/?p=259 (maybe make an alias to help)
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
