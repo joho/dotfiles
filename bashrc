@@ -2,7 +2,7 @@
 fortune | cowsay
 
 # set go workspace
-export GOPATH=$HOME/source/go
+export GOPATH=$HOME/Projects/go
 
 PATH="~/scripts:~/bin:$GOPATH/bin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin:~/.rbenv/bin:~/.rbenv/plugins/ruby-build/bin:$PATH"
 export PATH
@@ -65,16 +65,17 @@ alias spec="bin/rspec"
 alias cowboy="git push && bin/cap production deploy"
 alias killruby="ps aux | grep [r]uby | awk '{print \$2}' | xargs kill -9"
 
-# work stuff
-alias 99vm="cd ~/Projects/99designs/vmconfig && vagrant ssh"
-
 #retarded mac aliases to fix dumb shit
 alias restart_expose="killall Dock"
 alias fucking_eject="drutil tray eject"
 alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
 
+# work stuff
+alias 99vm="cd ~/Projects/99designs/vmconfig && vagrant ssh"
+export DEV_VM_MEM_FRACTION=8
+
 # project shortcuts with completion
-export PROJECTS="$HOME/source"
+export PROJECTS="$HOME/Projects"
 
 p() {
   cd "$PROJECTS/$1"
