@@ -131,4 +131,7 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " tabs not spaces for go
 autocmd FileType go setlocal noexpandtab ts=4 tw=0
 
+" PHP ugh
+autocmd FileType php setlocal expandtab ts=4 sw=4 sts=4
+
 " end filetype shit
