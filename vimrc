@@ -15,6 +15,7 @@ set incsearch           " do incremental searching
 set hlsearch            " highlight search results
 set ts=2 sw=2 sts=2     " default to 2 space tabs
 set expandtab           " always use spaces not tabs
+autocmd BufWritePre * :%s/\s\+$//e      " delete trailing whitespace on save
 
 " write swapfiles out to temp instead of polluting working directory
 set directory=/tmp/
