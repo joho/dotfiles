@@ -36,7 +36,7 @@ function parse_git_branch {
 function plain_git_branch {
   git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
 }
-  
+
 function proml {
   local        BLUE="\[\033[0;34m\]"
   local         RED="\[\033[0;31m\]"
@@ -47,7 +47,7 @@ function proml {
   local  LIGHT_GRAY="\[\033[0;37m\]"
   local BLINK_GREEN="\[\033[5;32m\]"
   local NO_COLOUR="\[\033[0m\]"
- 
+
 PS1="$RED\h$GREEN[\t]$RED:\w$GREEN\$(parse_git_branch)\
 \n👻  $NO_COLOUR"
 PS2='> '
@@ -73,6 +73,7 @@ alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
 
 # work stuff
 alias 99vm="cd ~/Projects/99designs/vmconfig && vagrant ssh"
+alias 99aws=". ~/.ssh/amazon/99designs/export_aws"
 export DEV_VM_MEM_FRACTION=8
 
 # project shortcuts with completion
