@@ -38,5 +38,6 @@
 [core]
   mergeoptions = --no-ff
   pager = less -r
+	excludesfile = ~/.gitignore_global
 [init]
 	templatedir = ~/.git_template
