@@ -4,7 +4,7 @@ fortune | cowsay
 # set go workspace
 export GOPATH=$HOME/Projects/go
 
-PATH="~/Projects/home/terminal_stuff/shell-scripts:~/bin:$GOPATH/bin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin:~/.rbenv/bin:~/.rbenv/plugins/ruby-build/bin:$PATH"
+PATH="~/Projects/home/terminal_stuff/shell-scripts:~/bin:~/Projects/golang-source/bin:$GOPATH/bin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin:~/.rbenv/bin:~/.rbenv/plugins/ruby-build/bin:$PATH"
 export PATH
 
 
