@@ -62,7 +62,6 @@ source ~/.git-completion.sh
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias gp="git push origin $(plain_git_branch)"
 alias gpr='git fetch origin && git rebase -p origin/$(plain_git_branch)'
-alias spec="bin/rspec"
 alias cowboy="git push && bin/cap production deploy"
 alias killruby="ps aux | grep [r]uby | awk '{print \$2}' | xargs kill -9"
 
