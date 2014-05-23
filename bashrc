@@ -74,6 +74,7 @@ alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
 alias 99vm="cd ~/Projects/99designs/vmconfig && vagrant ssh"
 alias 99aws=". ~/.ssh/amazon/99designs/export_aws"
 export DEV_VM_MEM_FRACTION=8
+export DOCKER_HOST=tcp://localhost:4243
 
 # project shortcuts with completion
 export PROJECTS="$HOME/Projects"
