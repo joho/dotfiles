@@ -27,20 +27,18 @@
 [alias]
   track = !sh -c 'git branch --track "$0" "origin/$0" && git checkout "$0"'
   ignored = "!git ls-files --others --exclude-standard"
-  delete = !sh -c 'git branch -D "$0" && git push origin ":$0"'
-  find-branch = !sh -c 'git branch -a | grep $1'
   st = status
   cav = commit -a -v
+  cv = commit -v
   co = checkout
-  wtf = !git-wtf
-  default = current
-	ctags = !.git/hooks/ctags
 [core]
   mergeoptions = --no-ff
   pager = less -r
 	excludesfile = ~/.gitignore_global
-[init]
-	templatedir = ~/.git_template
 [filter "media"]
 	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  smudge = git-media-smudge %f
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+  insteadOf = git://github.com/
+
