@@ -19,7 +19,7 @@
   changed = green
   untracked = cyan
 [push]
-  default = current
+  default = simple
 [apply]
   whitespace = strip
 [branch]
