@@ -125,15 +125,17 @@ filetype indent on
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 
 " golang specific stuff
-
-" autorun Fmt before save
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
-
-" tabs not spaces for go
+" ---
 autocmd FileType go setlocal noexpandtab ts=4 tw=0
-if !exists("g:gofmt_command")
-    let g:gofmt_command = "goimports"
-endif
+" still save if fmt fails
+let g:go_fmt_fail_silently = 1
+" tabs not spaces for go
+" gd => go to defintion
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+" godoc for current buffer
+au FileType go nmap <Leader>gd <Plug>(go-doc)
 
 " PHP ugh
 autocmd FileType php setlocal expandtab ts=4 sw=4 sts=4
