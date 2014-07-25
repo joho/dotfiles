@@ -5,7 +5,7 @@ set guioptions=egm              " Show tabs, hide toolbar and scrollbar.
 
 set linespace=0                 " 0 pixels between lines
 
-colorscheme railscasts
+colorscheme jellybeans_pda
 
 " Better colours for folding.
 highlight Folded guifg=#EEEEEE guibg=#333333
@@ -17,5 +17,5 @@ if has("gui_macvim")
   " unbind command-T from new tab and rebind to :CommandT
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :CommandT<CR>
-  
+
 end
