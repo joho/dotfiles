@@ -19,7 +19,7 @@
   changed = green
   untracked = cyan
 [push]
-  default = simple
+  default = current
 [apply]
   whitespace = strip
 [branch]
@@ -37,7 +37,7 @@
 	excludesfile = ~/.gitignore_global
 [filter "media"]
 	clean = git-media-clean %f
-  smudge = git-media-smudge %f
+	smudge = git-media-smudge %f
 [url "git@github.com:"]
   insteadOf = https://github.com/
   insteadOf = git://github.com/
