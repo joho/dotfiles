@@ -71,10 +71,13 @@ alias fucking_eject="drutil tray eject"
 alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
 
 # work stuff
-alias 99vm="cd ~/Projects/99designs/vmconfig && vagrant ssh"
 alias 99aws=". ~/.ssh/amazon/99designs/export_aws"
+# alias killdockers="docker rm -v -f $(docker ps -q -a)"
 export DEV_VM_MEM_FRACTION=8
-export DOCKER_HOST=tcp://localhost:4243
+export DOCKER_HOST=tcp://localhost:2375
+99clone() {
+  git clone git://github.com/99designs/$1
+}
 
 # project shortcuts with completion
 export PROJECTS="$HOME/Projects"
