@@ -74,6 +74,8 @@ export DOCKER_HOST=tcp://localhost:2375
 99clone() {
   git clone git://github.com/99designs/$1
 }
+# Temporary thing for payments
+export RAW_DATABASE_URL=mysql://localhost/payments
 
 # project shortcuts with completion
 export PROJECTS="$HOME/Projects"
