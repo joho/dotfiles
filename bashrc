@@ -1,8 +1,4 @@
-# tee hee, i frickin love little chatty shit when i log in
-fortune | cowsay
-
-# set go workspace
-export GOPATH=$HOME/Projects/go
+export GOPATH=$HOME/Projects/go:$HOME/Projects/99designs/go
 
 PATH="$HOME/Projects/home/terminal_stuff/shell-scripts:$HOME/bin:$HOME/Projects/golang-source/bin:$GOPATH/bin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin:$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin:$HOME/pear/bin:$PATH"
 export PATH
