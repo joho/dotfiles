@@ -68,6 +68,8 @@ alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
 
 # work stuff
 alias 99aws=". ~/.ssh/amazon/99designs/export_aws"
+alias 99up="cd ~/Projects/99designs/99dev && vagrant up"
+alias 99down="cd ~/Projects/99designs/99dev && vagrant halt"
 # alias killdockers="docker rm -v -f $(docker ps -q -a)"
 export DEV_VM_MEM_FRACTION=8
 export DOCKER_HOST=tcp://localhost:2375
