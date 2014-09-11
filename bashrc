@@ -76,7 +76,7 @@ export DOCKER_HOST=tcp://localhost:2375
 # This doesn't work at home, comment out on WFH days
 export docker_proxy=10.99.1.77:8080
 99clone() {
-  git clone git://github.com/99designs/$1
+  git clone git://github.com/99designs/$1 ~/Projects/99designs/$1
 }
 # Temporary thing for payments
 export RAW_DATABASE_URL=mysql://localhost/payments
