@@ -1,6 +1,8 @@
-export GOPATH=$HOME/Projects/go:$HOME/Projects/99designs/go
+WORK_GOPATH=$HOME/Projects/99designs/go
+HOME_GOPATH=$HOME/Projects/go
+export GOPATH=$HOME_GOPATH:$WORK_GOPATH
 
-PATH="$HOME/Projects/home/terminal_stuff/shell-scripts:$HOME/bin:$HOME/Projects/golang-source/bin:$GOPATH/bin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin:$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin:$HOME/pear/bin:$PATH"
+PATH="$HOME/Projects/home/terminal_stuff/shell-scripts:$HOME/bin:$HOME/Projects/golang-source/bin:$HOME_GOPATH/bin:$WORK_GOPATH/bin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin:$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin:$HOME/pear/bin:$PATH"
 export PATH
 
 
