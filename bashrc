@@ -72,8 +72,10 @@ alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
 alias 99aws=". ~/.ssh/amazon/99designs/export_aws"
 alias 99up="VAGRANT_CWD=~/Projects/99designs/99dev vagrant up"
 alias 99down="VAGRANT_CWD=~/Projects/99designs/99dev vagrant halt"
-# alias killdockers="docker rm -v -f $(docker ps -q -a)"
-export DEV_VM_MEM_FRACTION=8
+99cmd() {
+  VAGRANT_CWD=~/Projects/99designs/99dev vagrant ssh -c $1
+}
+
 export DOCKER_HOST=tcp://localhost:2375
 # This doesn't work at home, comment out on WFH days
 export docker_proxy=10.99.1.77:8080
