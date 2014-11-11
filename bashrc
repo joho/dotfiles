@@ -68,6 +68,8 @@ alias restart_expose="killall Dock"
 alias fucking_eject="drutil tray eject"
 alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
 
+alias home_docker="source ~/bin/boot2docker_up"
+
 # work stuff
 alias 99aws=". ~/.ssh/amazon/99designs/export_aws"
 alias 99up="VAGRANT_CWD=~/Projects/99designs/99dev vagrant up"
