@@ -99,6 +99,8 @@ function NFUCT()
     augroup END
     CommandTFlush
 endfunction
+
+let g:CommandTFileScanner='git'
 " end command T magic
 
 nnoremap <leader>aa :Ag<space>
@@ -126,14 +128,20 @@ au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc
 
 " golang specific stuff
 " ---
-autocmd FileType go setlocal noexpandtab ts=4 tw=0
+autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 nolist
 " still save if fmt fails
 let g:go_fmt_fail_silently = 1
-" tabs not spaces for go
+" use go imports!
+let g:go_fmt_command = "goimports"
+" extra syntax highlighting
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
 " gd => go to defintion
 au FileType go nmap gd <Plug>(go-def)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+
 " godoc for current buffer
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 
