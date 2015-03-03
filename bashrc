@@ -78,10 +78,9 @@ alias 99down="VAGRANT_CWD=~/Projects/99designs/99dev vagrant halt"
 99cmd() {
   VAGRANT_CWD=~/Projects/99designs/99dev vagrant ssh -c $1
 }
+alias 99mysql="mysql -h mysql.dockervm -u root -P 49801"
 
 export DOCKER_HOST=tcp://localhost:2375
-# This doesn't work at home, comment out on WFH days
-export docker_proxy=10.99.1.77:8080
 99clone() {
   git clone git://github.com/99designs/$1 ~/Projects/99designs/$1
 }
