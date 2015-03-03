@@ -42,3 +42,7 @@
   insteadOf = https://github.com/
   insteadOf = git://github.com/
 
+[rerere]
+	enabled = true
+[http]
+	cookiefile = /Users/joho/.gitcookies
