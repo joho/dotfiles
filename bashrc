@@ -73,8 +73,8 @@ alias home_docker="source ~/bin/boot2docker_up"
 
 # work stuff
 alias 99aws=". ~/.ssh/amazon/99designs/export_aws"
-alias 99up="docker-machine start 99dev"
-alias 99down="docker-machine stop 99dev"
+alias 99up="VAGRANT_CWD=~/Projects/99designs/99dev vagrant up"
+alias 99down="VAGRANT_CWD=~/Projects/99designs/99dev vagrant halt"
 alias 99mysql="mysql -h mysql.dockervm -u root -P 49801"
 
 export DOCKER_HOST=tcp://localhost:2375
