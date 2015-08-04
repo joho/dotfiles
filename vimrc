@@ -100,7 +100,8 @@ function NFUCT()
     CommandTFlush
 endfunction
 
-let g:CommandTFileScanner='git'
+let g:CommandTFileScanner='find'
+let g:CommandTWildIgnore=&wildignore . ",**/node_modules/*,**/Godeps/_workspace/*"
 " end command T magic
 
 nnoremap <leader>aa :Ag<space>
