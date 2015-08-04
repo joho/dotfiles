@@ -139,12 +139,9 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 " gd => go to defintion
-au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>gd <Plug>(go-def)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-
-" godoc for current buffer
-au FileType go nmap <Leader>gd <Plug>(go-doc)
 
 " PHP ugh
 autocmd FileType php setlocal expandtab ts=4 sw=4 sts=4
