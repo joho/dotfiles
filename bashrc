@@ -76,7 +76,9 @@ alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
 alias home_docker="source ~/bin/boot2docker_up"
 
 # work stuff
-alias 99aws=". ~/.ssh/amazon/99designs/export_aws"
+99aws() {
+  eval `aws-keychain env 99_main`
+}
 alias 99up="VAGRANT_CWD=~/Projects/99designs/99dev vagrant up"
 alias 99down="VAGRANT_CWD=~/Projects/99designs/99dev vagrant halt"
 alias 99mysql="mysql -h mysql.dockervm -u root -P 49801"
