@@ -31,6 +31,7 @@
   cav = commit -a -v
   cv = commit -v
   co = checkout
+	root = !pwd
 [core]
   mergeoptions = --no-ff
   pager = less -r
