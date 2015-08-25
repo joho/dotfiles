@@ -2,7 +2,7 @@ WORK_GOPATH=$HOME/Projects/99designs/go
 HOME_GOPATH=$HOME/Projects/go
 export GOPATH=$HOME_GOPATH:$WORK_GOPATH
 export GOBIN=$HOME_GOPATH/bin
-export GOROOT=$HOME/Tools/go-1.5
+export GOROOT=$HOME/Tools/go
 export GO15VENDOREXPERIMENT=1
 
 export ANDROID_HOME=/$HOME/Library/Android/sdk/
