@@ -20,6 +20,8 @@
   untracked = cyan
 [push]
   default = current
+[fetch]
+	prune = true
 [apply]
   whitespace = strip
 [branch]
