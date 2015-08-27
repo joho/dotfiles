@@ -59,7 +59,7 @@ PS4='+ '
 proml
 
 # git checkout tab auto completion
-source ~/.git-completion.bash
+. $(brew --prefix)/opt/git/etc/bash_completion.d/git-completion.bash
 
 # aliases
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
