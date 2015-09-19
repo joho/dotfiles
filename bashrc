@@ -59,7 +59,7 @@ alias xcode_licence="sudo xcrun cc" # http://blog.tomhennigan.co.uk/post/6223854
 
 # work stuff
 99aws() {
-  eval `aws-keychain env 99_main`
+  export AWS_DEFAULT_PROFILE=99_main
 }
 alias 99up="VAGRANT_CWD=~/Projects/99designs/99dev vagrant up"
 alias 99down="VAGRANT_CWD=~/Projects/99designs/99dev vagrant halt"
