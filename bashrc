@@ -46,18 +46,16 @@ proml
 
 # aliases
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
-alias gp="git push origin $(plain_git_branch)"
-alias gpr='git fetch origin && git rebase -p origin/$(plain_git_branch)'
+alias gpr='git pull --rebase'
 alias cg='cd $(git root)'
-alias cowboy="git push && bin/cap production deploy"
 alias killruby="ps aux | grep [r]uby | awk '{print \$2}' | xargs kill -9"
+alias ia="open $1 -a /Applications/iA\ Writer\ Pro.app"
 
 #retarded mac aliases to fix dumb shit
 alias restart_expose="killall Dock"
 alias fucking_eject="drutil tray eject"
 alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
-
-alias home_docker="source ~/bin/boot2docker_up"
+alias xcode_licence="sudo xcrun cc" # http://blog.tomhennigan.co.uk/post/62238548037/agreeing-to-the-xcode-license-from-the-command
 
 # work stuff
 99aws() {
