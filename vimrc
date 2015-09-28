@@ -147,3 +147,10 @@ au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 autocmd FileType php setlocal expandtab ts=4 sw=4 sts=4
 
 " end filetype shit
+
+function! SetSunshine()
+  set background=light
+  colorscheme solarized
+endfunction
+
+command Sunshine :call SetSunshine()
