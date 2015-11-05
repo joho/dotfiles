@@ -50,6 +50,7 @@ alias gpr='git pull --rebase'
 alias cg='cd $(git root)'
 alias killruby="ps aux | grep [r]uby | awk '{print \$2}' | xargs kill -9"
 alias ia="open $1 -a /Applications/iA\ Writer\ Pro.app"
+alias webserve="ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd).start'"
 
 #retarded mac aliases to fix dumb shit
 alias restart_expose="killall Dock"
