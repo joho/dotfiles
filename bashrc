@@ -59,11 +59,6 @@ alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
 alias xcode_licence="sudo xcrun cc" # http://blog.tomhennigan.co.uk/post/62238548037/agreeing-to-the-xcode-license-from-the-command
 
 # work stuff
-99aws() {
-  export AWS_DEFAULT_PROFILE=99_main
-}
-alias 99up="VAGRANT_CWD=~/Projects/99designs/99dev vagrant up"
-alias 99down="VAGRANT_CWD=~/Projects/99designs/99dev vagrant halt"
 alias 99mysql="mysql -h mysql.dockervm -u root -P 49801"
 
 export DOCKER_HOST=tcp://localhost:2375
