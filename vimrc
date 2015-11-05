@@ -104,7 +104,7 @@ function NFUCT()
 endfunction
 
 let g:CommandTFileScanner='find'
-let g:CommandTWildIgnore=&wildignore . ",**/node_modules/*,**/Godeps/_workspace/*,**/app/cache/*,**/log/*"
+let g:CommandTWildIgnore=&wildignore . ",**/node_modules/*,**/Godeps/_workspace/*,**/app/cache/*,**/log/*,**/bower_components/*"
 " end command T magic
 
 nnoremap <leader>aa :Ag<space>
