@@ -44,6 +44,9 @@ set winminheight=7
 set winheight=999
 " ------
 
+" Disable gui tabs because they lol shit up in macvim
+set go-=e
+
 " Keymapping shit
 " =========
 
