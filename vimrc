@@ -6,8 +6,7 @@ set hidden
 
 " Load pathogen for managing all those pesky plugins.
 " Load this first so ftdetect in bundles works properly.
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+execute pathogen#infect()
 
 syntax on                               " duh
 set autoindent smartindent cindent      " go for all indenting, all the time
