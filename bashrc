@@ -94,3 +94,6 @@ export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Visual Studio Code
+function code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*; }
