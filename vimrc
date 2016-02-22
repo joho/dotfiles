@@ -102,8 +102,9 @@ function NFUCT()
     CommandTFlush
 endfunction
 
-let g:CommandTFileScanner='find'
-let g:CommandTWildIgnore=&wildignore . ",**/node_modules/*,**/Godeps/_workspace/*,**/app/cache/*,**/log/*,**/bower_components/*"
+let g:CommandTFileScanner='watchman'
+" below command doesn't work with watchman (need to set config elsewhere, see https://facebook.github.io/watchman/docs/config.html)
+"let g:CommandTWildIgnore=&wildignore . ",**/node_modules/*,**/Godeps/_workspace/*,**/app/cache/*,**/log/*,**/bower_components/*"
 " end command T magic
 
 nnoremap <leader>aa :Ag<space>
@@ -166,3 +167,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+" ignore a bunch of irritating messages for html template files
+let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
