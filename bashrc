@@ -61,18 +61,15 @@ alias xcode_licence="sudo xcrun cc" # http://blog.tomhennigan.co.uk/post/6223854
 # work stuff
 alias 99mysql="mysql -h mysql.dockervm -u root -P 49801"
 
-export DOCKER_HOST=tcp://localhost:2375
 99clone() {
-  git clone git://github.com/99designs/$1 ~/Projects/99designs/$1
+  git clone "git://github.com/99designs/$1" ~/Projects/99designs/"$1"
 }
-# Temporary thing for payments
-export RAW_DATABASE_URL=mysql://localhost/payments
 
 # project shortcuts with completion
 export PROJECTS="$HOME/Projects"
 
 p() {
-  cd "$PROJECTS/$1"
+  cd "$PROJECTS/$1" || exit
 }
 
 _p() {
