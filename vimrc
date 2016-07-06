@@ -161,3 +161,18 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " ignore a bunch of irritating messages for html template files
 let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
+
+" YouCompleteMe settings
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'qf' : 1,
+      \ 'notes' : 1,
+      \ 'markdown' : 1,
+      \ 'unite' : 1,
+      \ 'text' : 1,
+      \ 'vimwiki' : 1,
+      \ 'pandoc' : 1,
+      \ 'infolog' : 1,
+      \ 'mail' : 1,
+      \ 'gitcommit' : 1
+      \}
