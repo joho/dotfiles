@@ -106,7 +106,7 @@ map <leader>v :view %%
 
 " pete's run rspec in iterm thingo
 " https://github.com/notahat/dotfiles/blob/master/vim/plugin/iterm.vim
-map <D-r> :Spec<CR>
+au FileType ruby map <D-r> :Spec<CR>
 
 " end keymapping
 
