@@ -71,15 +71,6 @@ map <leader>t :CommandT<cr>
 " open routes or gemfile up top
 map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
-map <leader>gd :topleft 100 :split db/schema.rb<cr>
-
-" bunch of rails specific command t thingos
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
 
 " set up commandT to auto flush the buffer when a new file is written
 " borrowed from http://stackoverflow.com/questions/3486747/run-the-commandtflush-command-when-a-new-file-is-written
