@@ -21,7 +21,8 @@ set directory=/tmp/
 
 " Set up the status line
 set laststatus=2        " Always show it.
-set statusline=%([%M%R%H%W]\ \ %)Line:\ %l/%L\ %{fugitive#statusline()}\ \ %f%=%{&filetype}\ \ Column:\ %c
+" set statusline=%([%M%R%H%W]\ \ %)Line:\ %l/%L\ %{fugitive#statusline()}\ \ %f%=%{&filetype}\ \ Column:\ %c
+let g:airline#extensions#tabline#enabled = 1
 
 " ignoring certain file types
 set wildignore+=*.o,*.obj,.git,.DS_Store,*.swp,vendor/bundle/**,tmp/**,public/source_maps/**
