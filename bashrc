@@ -49,7 +49,6 @@ alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias gpr='git pull --rebase'
 alias cg='cd $(git root)'
 alias killruby="ps aux | grep [r]uby | awk '{print \$2}' | xargs kill -9"
-alias ia="open $1 -a /Applications/iA\ Writer\ Pro.app"
 alias webserve="ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd).start'"
 
 #retarded mac aliases to fix dumb shit
@@ -57,6 +56,7 @@ alias restart_expose="killall Dock"
 alias fucking_eject="drutil tray eject"
 alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
 alias xcode_licence="sudo xcrun cc" # http://blog.tomhennigan.co.uk/post/62238548037/agreeing-to-the-xcode-license-from-the-command
+alias docker_cleanup="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc"
 
 # work stuff
 alias 99mysql="mysql -h mysql.dockervm -u root -P 49801"
@@ -77,6 +77,8 @@ _p() {
 }
 
 complete -F _p p
+
+complete -C aws_completer aws
 
 # stop ctrl-D logging me out
 shopt -s -o ignoreeof
