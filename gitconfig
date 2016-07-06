@@ -34,6 +34,7 @@
   cv = commit -v
   co = checkout
 	root = !pwd
+	force = push --force-with-lease
 [core]
   mergeoptions = --no-ff
   pager = less -r
