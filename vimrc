@@ -179,3 +179,5 @@ let g:ycm_filetype_blacklist = {
       \ 'mail' : 1,
       \ 'gitcommit' : 1
       \}
+" close after showing preview window
+let g:ycm_autoclose_preview_window_after_completion = 1
