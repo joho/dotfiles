@@ -118,6 +118,9 @@ au FileType ruby map <D-r> :Spec<CR>
 filetype plugin on
 filetype indent on
 
+" git stuff
+au FileType gitconfig setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 nolist
+
 " custom hax to get ruby syntax highlighting in files that don't end in .rb
 " Thanks: http://dailyvim.tumblr.com/post/1262764095/additional-ruby-syntax-highlighting
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
@@ -163,6 +166,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
 
 " YouCompleteMe settings
+"
+" files to not complete for (most important is commit messages)
 let g:ycm_filetype_blacklist = {
       \ 'tagbar' : 1,
       \ 'qf' : 1,

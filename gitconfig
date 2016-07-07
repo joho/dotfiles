@@ -1,50 +1,50 @@
 [user]
-  email = jrbarton@gmail.com
-  name = John Barton (joho)
+	email = jrbarton@gmail.com
+	name = John Barton (joho)
 [color]
-  branch = auto
-  diff = auto
-  status = auto
+	branch = auto
+	diff = auto
+	status = auto
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 [push]
-  default = current
+	default = current
 [fetch]
 	prune = true
 [apply]
-  whitespace = strip
+	whitespace = strip
 [branch]
-  autosetupmerge = true
+	autosetupmerge = true
 [alias]
-  track = !sh -c 'git branch --track "$0" "origin/$0" && git checkout "$0"'
-  ignored = "!git ls-files --others --exclude-standard"
-  st = status
-  cav = commit -a -v
-  cv = commit -v
-  co = checkout
+	track = !sh -c 'git branch --track "$0" "origin/$0" && git checkout "$0"'
+	ignored = "!git ls-files --others --exclude-standard"
+	st = status
+	cav = commit -a -v
+	cv = commit -v
+	co = checkout
 	root = !pwd
 	force = push --force-with-lease
 [core]
-  mergeoptions = --no-ff
-  pager = less -r
+	mergeoptions = --no-ff
+	pager = less -r
 	excludesfile = ~/.gitignore_global
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [url "git@github.com:"]
-  insteadOf = https://github.com/
-  insteadOf = git://github.com/
+	insteadOf = https://github.com/
+	insteadOf = git://github.com/
 
 [rerere]
 	enabled = true
