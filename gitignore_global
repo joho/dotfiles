@@ -70,3 +70,5 @@ sysinfo.txt
 # NODEJS WAT
 .tern-project
 
+# arudboy stuff
+.ycm_extra_conf.pyc

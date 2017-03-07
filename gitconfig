@@ -35,6 +35,7 @@
 	co = checkout
 	root = !pwd
 	force = push --force-with-lease
+	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 [core]
 	mergeoptions = --no-ff
 	pager = less -r
@@ -43,8 +44,7 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [url "git@github.com:"]
-	insteadOf = https://github.com/
-	insteadOf = git://github.com/
+ 	insteadOf = git://github.com/
 
 [rerere]
 	enabled = true
