@@ -41,9 +41,6 @@ PS4='+ '
 }
 proml
 
-# git checkout tab auto completion
-. $(brew --prefix)/opt/git/etc/bash_completion.d/git-completion.bash
-
 # aliases
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias gpr='git pull --rebase'
@@ -65,37 +62,11 @@ alias 99mysql="mysql -h mysql.dockervm -u root -P 49801"
   git clone "git://github.com/99designs/$1" ~/Projects/99designs/"$1"
 }
 
-# project shortcuts with completion
-export PROJECTS="$HOME/Projects"
-
-p() {
-  cd "$PROJECTS/$1" || exit
-}
-
-_p() {
-  COMPREPLY=( $(compgen -W "$(ls $PROJECTS | grep -vE \"^_\")" -- ${COMP_WORDS[COMP_CWORD]} ) )
-}
-
-complete -F _p p
-
-complete -C aws_completer aws
-
-# stop ctrl-D logging me out
-shopt -s -o ignoreeof
-
-# allow me to ctrl-z, ctrl-f for some retro multitasking
-export HISTIGNORE="fg*"
-bind '"\C-f": "fg %-\n"'
-
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # use vmware by default for vagrant
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
-# if kernel_task is going weird read http://www.rdoxenham.com/?p=259 (maybe make an alias to help)
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Visual Studio Code
-function code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*; }
