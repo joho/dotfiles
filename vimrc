@@ -21,6 +21,7 @@ set directory=/tmp/
 
 " Set up the status line
 set laststatus=2        " Always show it.
+let g:airline#extensions#syntastic#enabled = 1
 
 " ignoring certain file types
 set wildignore+=*.o,*.obj,.git,.DS_Store,*.swp,vendor/bundle/**,tmp/**,public/source_maps/**
@@ -67,9 +68,6 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 " bog standard command t
 map <leader>t :CommandT<cr>
 
-" open routes or gemfile up top
-map <leader>gr :topleft :split config/routes.rb<cr>
-map <leader>gg :topleft 100 :split Gemfile<cr>
 
 " set up commandT to auto flush the buffer when a new file is written
 " borrowed from http://stackoverflow.com/questions/3486747/run-the-commandtflush-command-when-a-new-file-is-written
@@ -99,13 +97,13 @@ let g:CommandTFileScanner='watchman'
 
 nnoremap <leader>aa :Ag<space>
 
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>e :edit %%
-map <leader>v :view %%
-
 " pete's run rspec in iterm thingo
 " https://github.com/notahat/dotfiles/blob/master/vim/plugin/iterm.vim
 au FileType ruby map <D-r> :Spec<CR>
+"
+" open routes or gemfile up top
+au FileType ruby map <leader>gr :topleft :split config/routes.rb<cr>
+au FileType ruby map <leader>gg :topleft 100 :split Gemfile<cr>
 
 " end keymapping
 
@@ -115,6 +113,10 @@ au FileType ruby map <D-r> :Spec<CR>
 " Enable file type detection
 filetype plugin on
 filetype indent on
+
+" Indentation shame
+let g:LookOfDisapprovalTabTreshold=5
+let g:LookOfDisapprovalSpaceTreshold=(&tabstop*5)
 
 " git stuff
 au FileType gitconfig setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 nolist
@@ -128,56 +130,60 @@ au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc
 autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 nolist
 " still save if fmt fails
 let g:go_fmt_fail_silently = 1
+" don't autoinstall things
+let g:go_disable_autoinstall = 0
 " use go imports!
 let g:go_fmt_command = "goimports"
 " extra syntax highlighting
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 " gd => go to defintion
 au FileType go nmap <Leader>gd <Plug>(go-def)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+
+au FileType go nmap <Leader>gr :GoRename<CR>
+
+let g:go_list_type = "quickfix"
 
 " PHP ugh
 autocmd FileType php setlocal expandtab ts=4 sw=4 sts=4
 
 " end filetype shit
 
-function! SetSunshine()
-  set background=light
-  colorscheme solarized
-endfunction
-
-command Sunshine :call SetSunshine()
-
+autocmd FileType go setlocal omnifunc=go#complete#Complete
 " syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 " ignore a bunch of irritating messages for html template files
 let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
 
-" YouCompleteMe settings
-"
-" files to not complete for (most important is commit messages)
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'qf' : 1,
-      \ 'notes' : 1,
-      \ 'markdown' : 1,
-      \ 'unite' : 1,
-      \ 'text' : 1,
-      \ 'vimwiki' : 1,
-      \ 'pandoc' : 1,
-      \ 'infolog' : 1,
-      \ 'mail' : 1,
-      \ 'gitcommit' : 1
-      \}
-" close after showing preview window
-let g:ycm_autoclose_preview_window_after_completion = 1
+" Code completion
+" let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+autocmd FileType go setlocal omnifunc=go#complete#Complete
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+
+" let g:neocomplete#sources#omni#input_patterns.go = '\h\w*|\h\w\.\w*'
+let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
