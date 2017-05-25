@@ -115,8 +115,8 @@ filetype plugin on
 filetype indent on
 
 " Indentation shame
-let g:LookOfDisapprovalTabTreshold=5
-let g:LookOfDisapprovalSpaceTreshold=(&tabstop*5)
+let g:LookOfDisapprovalTabThreshold=5
+let g:LookOfDisapprovalSpaceThreshold=(&tabstop*5)
 
 " git stuff
 au FileType gitconfig setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 nolist
