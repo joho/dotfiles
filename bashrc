@@ -70,3 +70,9 @@ export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/joho/google-cloud-sdk/path.bash.inc' ]; then source '/Users/joho/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/joho/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/joho/google-cloud-sdk/completion.bash.inc'; fi
