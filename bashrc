@@ -10,28 +10,37 @@ export ANDROID_HOME=/$HOME/Library/Android/sdk/
 PATH="$HOME/Projects/home/terminal_stuff/shell-scripts:$HOME/bin:$GOROOT/bin:$HOME_GOPATH/bin:$WORK_GOPATH/bin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin:$HOME/.rbenv/bin:$ANDROID_HOME/bin:$PATH"
 export PATH
 
-
 # get nice colours
 TERM=xterm-color; export TERM
 export CLICOLOR=1
 export LSCOLORS=DxFxCxDxDxegedabagacad
 
-export EDITOR='mvim -f'
-
 # git branch in prompt
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
-. $(brew --prefix)/opt/git/etc/bash_completion.d/git-prompt.sh
+if [[ $(uname) == 'Darwin' ]]; then
+  . $(brew --prefix)/opt/git/etc/bash_completion.d/git-prompt.sh
+
+  #retarded mac aliases to fix dumb shit
+  alias restart_expose="killall Dock"
+  alias fucking_eject="drutil tray eject"
+  alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
+  alias xcode_licence="sudo xcrun cc" # http://blog.tomhennigan.co.uk/post/62238548037/agreeing-to-the-xcode-license-from-the-command
+  alias docker_cleanup="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc"
+
+  ### Added by the Heroku Toolbelt
+  export PATH="/usr/local/heroku/bin:$PATH"
+
+  export EDITOR='mvim -f'
+else
+  . /usr/share/git-core/contrib/completion/git-prompt.sh
+
+  export EDITOR='vim -f'
+fi
 
 function proml {
-  local        BLUE="\[\033[0;34m\]"
   local         RED="\[\033[0;31m\]"
-  local   LIGHT_RED="\[\033[1;31m\]"
   local       GREEN="\[\033[0;32m\]"
-  local LIGHT_GREEN="\[\033[1;32m\]"
-  local       WHITE="\[\033[1;37m\]"
-  local  LIGHT_GRAY="\[\033[0;37m\]"
-  local BLINK_GREEN="\[\033[5;32m\]"
   local NO_COLOUR="\[\033[0m\]"
 
 PS1="$RED\h$GREEN[\t]$RED:\w$GREEN\$(__git_ps1)\
@@ -45,15 +54,8 @@ proml
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias gpr='git pull --rebase'
 alias cg='cd $(git root)'
-alias killruby="ps aux | grep [r]uby | awk '{print \$2}' | xargs kill -9"
 alias webserve="ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd).start'"
 
-#retarded mac aliases to fix dumb shit
-alias restart_expose="killall Dock"
-alias fucking_eject="drutil tray eject"
-alias fucking_fix_dns="sudo killall -HUP mDNSResponder"
-alias xcode_licence="sudo xcrun cc" # http://blog.tomhennigan.co.uk/post/62238548037/agreeing-to-the-xcode-license-from-the-command
-alias docker_cleanup="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc"
 
 # work stuff
 alias 99mysql="mysql -h mysql.dockervm -u root -P 49801"
@@ -62,14 +64,7 @@ alias 99mysql="mysql -h mysql.dockervm -u root -P 49801"
   git clone "git://github.com/99designs/$1" ~/Projects/99designs/"$1"
 }
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# use vmware by default for vagrant
-export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
+if which rbenv > /dev/null 2>&1; then eval "$(rbenv init -)"; fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/joho/google-cloud-sdk/path.bash.inc' ]; then source '/Users/joho/google-cloud-sdk/path.bash.inc'; fi

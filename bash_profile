@@ -1,7 +1,9 @@
-# tee hee, i frickin love little chatty shit when i log in
-fortune /Users/joho/Projects/home/programmers_oblique_strategies | cowsay
+if [[ $(uname) == 'Darwin' ]]; then
+  # tee hee, i frickin love little chatty shit when i log in
+  fortune /Users/joho/Projects/home/programmers_oblique_strategies | cowsay
 
-eval $(docker-machine env 99dev)
+  eval $(docker-machine env 99dev)
+fi
 
 [[ -s ~/.bashrc ]] && source ~/.bashrc
 
