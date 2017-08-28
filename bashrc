@@ -6,7 +6,7 @@ export GO15VENDOREXPERIMENT=1
 
 export ANDROID_HOME=/$HOME/Library/Android/sdk/
 
-PATH="$HOME/Projects/home/terminal_stuff/shell-scripts:$HOME/bin:$GOROOT/bin:$HOME_GOPATH/bin:$WORK_GOPATH/bin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin:$HOME/.rbenv/bin:$ANDROID_HOME/bin:$PATH"
+PATH="$HOME/Projects/home/terminal_stuff/shell-scripts:$HOME/bin:$HOME_GOPATH/bin:$WORK_GOPATH/bin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin:$HOME/.rbenv/bin:$ANDROID_HOME/bin:$PATH"
 export PATH
 
 # get nice colours
@@ -18,8 +18,6 @@ export LSCOLORS=DxFxCxDxDxegedabagacad
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 if [[ $(uname) == 'Darwin' ]]; then
-  export GOROOT=$HOME/Tools/go
-
   . $(brew --prefix)/opt/git/etc/bash_completion.d/git-prompt.sh
 
   #retarded mac aliases to fix dumb shit
