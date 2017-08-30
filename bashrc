@@ -1,3 +1,9 @@
+# Hack for "bash for windows" to turn into "zsh for windows"
+if  uname -r | grep -Eq 'Microsoft'; then
+  bash -c zsh
+  exit
+fi
+
 WORK_GOPATH=$HOME/Projects/99designs/go
 HOME_GOPATH=$HOME/Projects/go
 export GOPATH=$HOME_GOPATH:$WORK_GOPATH
