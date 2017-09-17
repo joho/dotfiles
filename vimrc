@@ -152,6 +152,9 @@ let g:go_list_type = "quickfix"
 " PHP ugh
 autocmd FileType php setlocal expandtab ts=4 sw=4 sts=4
 
+" javascript
+let g:jsx_ext_required = 0
+
 " end filetype shit
 
 autocmd FileType go setlocal omnifunc=go#complete#Complete
@@ -161,6 +164,7 @@ let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_javascript_checkers = ['eslint']
 " ignore a bunch of irritating messages for html template files
 let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
 
