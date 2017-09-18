@@ -73,7 +73,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION || "$(uname 2> /dev/null)" == "Linux" ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim -f'
+  export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a iTerm2"'
 fi
 
 # Compilation flags
