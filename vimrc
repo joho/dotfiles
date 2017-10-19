@@ -65,8 +65,11 @@ map <leader><leader> <C-^>
 " easy way to clear highlighted searches
 nmap <silent> <leader>/ :nohlsearch<CR>
 
-" bog standard command t
-map <leader>t :CommandT<cr>
+" fzf for command-t like functionality
+set rtp+=/usr/local/opt/fzf
+nmap ; :Buffers<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>r :Tags<CR>
 
 
 " set up commandT to auto flush the buffer when a new file is written
@@ -154,6 +157,8 @@ autocmd FileType php setlocal expandtab ts=4 sw=4 sts=4
 
 " javascript
 let g:jsx_ext_required = 0
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier
 
 " end filetype shit
 
