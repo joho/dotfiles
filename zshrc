@@ -3,7 +3,7 @@ HOME_GOPATH=$HOME/Projects/go
 export GOPATH=$HOME_GOPATH:$WORK_GOPATH
 export GOBIN=$HOME_GOPATH/bin
 
-PATH="$HOME/Projects/home/terminal_stuff/shell-scripts:$HOME/bin:$HOME_GOPATH/bin:$WORK_GOPATH/bin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/opt/local/lib/postgresql84/bin:$HOME/.rbenv/bin:$ANDROID_HOME/bin:$PATH"
+PATH="$HOME/bin:$HOME_GOPATH/bin:$WORK_GOPATH/bin:/usr/local/bin:/usr/local/sbin:$HOME/.rbenv/bin:$PATH"
 export PATH
 #
 # Path to your oh-my-zsh installation.
@@ -69,6 +69,9 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+# Setting ag as the default source for fzf
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION || "$(uname 2> /dev/null)" == "Linux" ]]; then
   export EDITOR='vim'
@@ -94,16 +97,6 @@ PROJECTS=~/Projects
 function p() {
   cd $PROJECTS/$1
 }
-
-#compdef p
-_p() {
-  local word completions
-  word="$1"
-  completions="ls $PROJECTS"
-  reply=( "${(ps:\n:)completions}" )
-}
-
-_p "$@"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
