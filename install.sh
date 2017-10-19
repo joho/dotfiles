@@ -21,7 +21,6 @@ ln -sf "$PWD/vimrc" ~/.vimrc
 ln -sf "$PWD/gvimrc" ~/.gvimrc
 ln -sf "$PWD/bashrc" ~/.bashrc
 ln -sf "$PWD/zshrc" ~/.zshrc
-ln -sf "$PWD/profile" ~/.bash_profile
 ln -sf "$PWD/gitconfig" ~/.gitconfig
 ln -sf "$PWD/gitignore_global" ~/.gitignore_global
 ln -sf "$PWD/gemrc" ~/.gemrc
