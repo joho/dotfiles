@@ -98,7 +98,11 @@ let g:CommandTFileScanner='watchman'
 "let g:CommandTWildIgnore=&wildignore . ",**/node_modules/*,**/Godeps/_workspace/*,**/app/cache/*,**/log/*,**/bower_components/*"
 " end command T magic
 
-nnoremap <leader>aa :Ag<space>
+if executable('rg')
+  nnoremap <leader>aa :Rg<space>
+else
+  nnoremap <leader>aa :Ag<space>
+endif
 
 " pete's run rspec in iterm thingo
 " https://github.com/notahat/dotfiles/blob/master/vim/plugin/iterm.vim
