@@ -1,3 +1,5 @@
 {
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 1,
+    "vim.disableAnnoyingNeovimMessage": true
 }
