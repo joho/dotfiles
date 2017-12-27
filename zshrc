@@ -101,6 +101,11 @@ function p() {
 export NVM_DIR="$HOME/.nvm"
 # linux nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # homebrew nvm
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Windows For Linux hacks
+if  uname -r | grep -Eq 'Microsoft'; then
+  alias code="cmd.exe \/C code $*"
+fi
