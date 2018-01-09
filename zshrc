@@ -113,4 +113,3 @@ fi
 # 99designs dev settings
 export NNDEV_DOCKER_FOR_MAC=true
 export CHAMBER_USE_PATHS=1
->>>>>>> Include ENV for 99designs work
