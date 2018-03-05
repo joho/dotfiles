@@ -50,3 +50,6 @@
 	enabled = true
 [http]
 	cookiefile = /Users/joho/.gitcookies
+
+[diff]
+  renameLimit = 1024
