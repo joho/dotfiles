@@ -65,12 +65,8 @@ map <leader><leader> <C-^>
 " easy way to clear highlighted searches
 nmap <silent> <leader>/ :nohlsearch<CR>
 
-" fzf for command-t like functionality
-set rtp+=/usr/local/opt/fzf
-nmap ; :Buffers<CR>
-nmap <Leader>t :Files<CR>
-nmap <Leader>r :Tags<CR>
-
+" https://github.com/wincent/command-t
+map <leader>t :CommandT<cr>
 
 " set up commandT to auto flush the buffer when a new file is written
 " borrowed from http://stackoverflow.com/questions/3486747/run-the-commandtflush-command-when-a-new-file-is-written
