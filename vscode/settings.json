@@ -1,5 +1,17 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 1,
-    "vim.disableAnnoyingNeovimMessage": true
+  "workbench.startupEditor": "newUntitledFile",
+  "window.zoomLevel": 1,
+  "vim.disableAnnoyingNeovimMessage": true,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "extensions.recommendations": [
+    "PeterJausovec.vscode-docker",
+    "castwide.solargraph",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "johob.pico8-vscode",
+    "lukehoban.Go",
+    "rebornix.Ruby",
+    "srfrnk.user-extensions"
+  ]
 }
