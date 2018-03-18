@@ -4,6 +4,7 @@
   "vim.disableAnnoyingNeovimMessage": true,
   "git.enableSmartCommit": true,
   "git.autofetch": true,
+  "extensions.ignoreRecommendations": false,
   "extensions.recommendations": [
     "PeterJausovec.vscode-docker",
     "castwide.solargraph",
