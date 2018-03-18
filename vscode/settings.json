@@ -7,8 +7,10 @@
   "extensions.ignoreRecommendations": false,
   "extensions.recommendations": [
     "PeterJausovec.vscode-docker",
+    "ban.spellright",
     "castwide.solargraph",
     "dbaeumer.vscode-eslint",
+    "doublefint.pgsql",
     "esbenp.prettier-vscode",
     "johob.pico8-vscode",
     "lukehoban.Go",
