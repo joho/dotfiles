@@ -1,7 +1,6 @@
 {
   "workbench.startupEditor": "newUntitledFile",
   "window.zoomLevel": 1,
-  "vim.disableAnnoyingNeovimMessage": true,
   "git.enableSmartCommit": true,
   "git.autofetch": true,
   "extensions.ignoreRecommendations": false,
@@ -16,5 +15,8 @@
     "lukehoban.Go",
     "rebornix.Ruby",
     "srfrnk.user-extensions"
-  ]
+  ],
+  "[javascript]": {
+    "editor.formatOnSave": true
+  }
 }
