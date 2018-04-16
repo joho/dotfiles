@@ -89,7 +89,9 @@ fi
 alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias gpr='git pull --rebase'
 alias cg='cd $(git root)'
-
+if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
+  alias open='xdg-open'
+fi
 # Duplicate my projects folder thing from my bashrc
 # TODO: make it actually work
 PROJECTS=~/Projects
