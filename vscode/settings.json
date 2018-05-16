@@ -7,16 +7,16 @@
   "extensions.recommendations": [
     "PeterJausovec.vscode-docker",
     "ban.spellright",
-    "castwide.solargraph",
     "dbaeumer.vscode-eslint",
     "doublefint.pgsql",
     "esbenp.prettier-vscode",
     "johob.pico8-vscode",
-    "lukehoban.Go",
+    "ms-vscode.Go",
     "rebornix.Ruby",
     "srfrnk.user-extensions"
   ],
   "[javascript]": {
     "editor.formatOnSave": true
-  }
+  },
+  "explorer.confirmDelete": false
 }
