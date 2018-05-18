@@ -92,6 +92,10 @@ alias cg='cd $(git root)'
 if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
   alias open='xdg-open'
 fi
+
+dc() { docker-compose $* }
+dcr() { docker-compose run --rm $* }
+
 # Duplicate my projects folder thing from my bashrc
 # TODO: make it actually work
 PROJECTS=~/Projects
