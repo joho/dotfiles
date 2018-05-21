@@ -1,0 +1,12 @@
+# Who to send errors/etc too
+admin_email: john@hecate.co
+# Config for shipping news (notify on merged PRs)
+shipping:
+  # Array of notifications (ie send library releases to devs, prod releases to PM, etc)
+  -
+    emails:
+      - releases@hecate.co
+    matching:
+      all: true
+      # topic: "production"
+      # whitelist: ["hecate", "godotenv"]
