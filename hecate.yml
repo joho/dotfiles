@@ -5,9 +5,22 @@ shipping:
   # Array of notifications (ie send library releases to devs, prod releases to PM, etc)
   -
     rollup: daily
+    timezone: "Asia/Jakarta"
     emails:
       - john@hecate.co
     matching:
       all: true
-      # topic: "production"
-      # whitelist: ["hecate", "godotenv"]
+  -
+    rollup: daily
+    timezone: "Australia/Melbourne"
+    emails:
+      - john@hecate.co
+    matching:
+      all: true
+  -
+    rollup: daily
+    timezone: "Europe/Moscow"
+    emails:
+      - john@hecate.co
+    matching:
+      all: true
