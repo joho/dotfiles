@@ -63,7 +63,7 @@ plugins=(git rbenv)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+IS_LINUX=
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -116,6 +116,7 @@ if  uname -r | grep -Eq 'Microsoft'; then
   alias code="cmd.exe \/C code $*"
 fi
 
-# 99designs dev settings
-export NNDEV_DOCKER_FOR_MAC=true
-export CHAMBER_USE_PATHS=1
+# Linux aws-vault config
+if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
+  export AWS_VAULT_BACKEND=secret-service
+fi
