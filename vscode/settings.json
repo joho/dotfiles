@@ -5,8 +5,11 @@
   "git.autofetch": true,
   "extensions.ignoreRecommendations": false,
   "extensions.recommendations": [
+    "CraigMaslowski.erb",
+    "HookyQR.beautify",
     "PeterJausovec.vscode-docker",
     "ban.spellright",
+    "castwide.solargraph",
     "dbaeumer.vscode-eslint",
     "doublefint.pgsql",
     "esbenp.prettier-vscode",
@@ -16,7 +19,28 @@
     "srfrnk.user-extensions"
   ],
   "[javascript]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
-  "explorer.confirmDelete": false
+  "[ruby]": {
+    "editor.tabSize": 2,
+  },
+  "[markdown]": {
+    // enable word wrap, since horizontal scroll while writing isn't human
+    "editor.wordWrap": "on",
+    // i don't need line numbers, i'm not coding
+    "editor.lineNumbers": "off",
+    // i don't need rules, i'm not coding
+    "editor.rulers": [],
+    // larger text, to improve focus on writing
+    "editor.fontSize": 14,
+    // more comfortable line height
+    "editor.lineHeight": 25,
+    // disable editor suggestions based on previous words
+    "editor.quickSuggestions": false,
+  },
+  "explorer.confirmDelete": false,
+  "beautify.language": {
+    "css": ["css", "scss", "less"],
+    "html": ["htm", "html", "html.erb"]
+  }
 }
