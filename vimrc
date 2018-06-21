@@ -123,6 +123,8 @@ let g:LookOfDisapprovalSpaceThreshold=(&tabstop*5)
 
 " git stuff
 au FileType gitconfig setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 nolist
+" stop git commit messages jumping to last location
+autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
 " custom hax to get ruby syntax highlighting in files that don't end in .rb
 " Thanks: http://dailyvim.tumblr.com/post/1262764095/additional-ruby-syntax-highlighting
