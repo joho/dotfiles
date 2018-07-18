@@ -24,3 +24,8 @@ shipping:
       - john@hecate.co
     matching:
       all: true
+  -
+    slack_channels:
+      - general
+    matching:
+      all: true
