@@ -42,5 +42,6 @@
   "beautify.language": {
     "css": ["css", "scss", "less"],
     "html": ["htm", "html", "html.erb"]
-  }
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
