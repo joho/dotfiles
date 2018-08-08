@@ -29,3 +29,9 @@ shipping:
       - general
     matching:
       all: true
+  -
+    emails: [john@hecate.co]
+    pull_requests:
+      action: labeled
+      all_repositories: true
+      labels: [hecate-label-test] 
