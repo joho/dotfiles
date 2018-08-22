@@ -1,13 +1,12 @@
 {
   "workbench.startupEditor": "newUntitledFile",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 2,
   "git.enableSmartCommit": true,
   "git.autofetch": true,
   "extensions.ignoreRecommendations": false,
   "extensions.recommendations": [
     "CraigMaslowski.erb",
     "HookyQR.beautify",
-    "PeterJausovec.vscode-docker",
     "ban.spellright",
     "castwide.solargraph",
     "dbaeumer.vscode-eslint",
@@ -15,8 +14,10 @@
     "esbenp.prettier-vscode",
     "johob.pico8-vscode",
     "ms-vscode.Go",
-    "rebornix.Ruby",
-    "srfrnk.user-extensions"
+    "PeterJausovec.vscode-docker",
+    "rebornix.ruby",
+    "srfrnk.user-extensions",
+    "whizkydee.material-palenight-theme"
   ],
   "[javascript]": {
     "editor.formatOnSave": true,
@@ -43,5 +44,7 @@
     "css": ["css", "scss", "less"],
     "html": ["htm", "html", "html.erb"]
   },
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.colorTheme": "Palenight Theme",
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
