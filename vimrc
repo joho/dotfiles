@@ -1,12 +1,56 @@
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=/home/joho/.vim/bundle/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/home/joho/.vim/bundle')
+  call dein#begin('/home/joho/.vim/bundle')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('/home/joho/.vim/bundle/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('rking/ag.vim')
+  call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('editorconfig/editorconfig-vim')
+  call dein#add('Shougo/neocomplete.vim')
+  call dein#add('scrooloose/syntastic')
+  call dein#add('tomtom/tcomment_vim')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('fatih/vim-go')
+  call dein#add('nathanaelkane/vim-indent-guides')
+  call dein#add('pangloss/vim-javascript')
+  call dein#add('mxw/vim-jsx')
+  call dein#add('tpope/vim-markdown')
+  call dein#add('prettier/vim-prettier')
+  call dein#add('tpope/vim-rails')
+  call dein#add('tpope/vim-surround')
+  call dein#add('nikvdp/ejs-syntax')
+  call dein#add('Quramy/tsuquyomi')
+  call dein#add('leafgarland/typescript-vim')
+  
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
+
+"End dein Scripts-------------------------
 
 set hidden
-
-" Load pathogen for managing all those pesky plugins.
-" Load this first so ftdetect in bundles works properly.
-execute pathogen#infect()
 
 syntax on                               " duh
 set autoindent smartindent cindent      " go for all indenting, all the time
@@ -24,7 +68,7 @@ set laststatus=2        " Always show it.
 let g:airline#extensions#syntastic#enabled = 1
 
 " ignoring certain file types
-set wildignore+=*.o,*.obj,.git,.DS_Store,*.swp,vendor/bundle/**,tmp/**,public/source_maps/**
+set wildignore+=*.o,*.obj,.git,.DS_Store,*.swp,vendor/bundle/**,tmp/**,public/source_maps/**,node_modules/*
 
 " automatically create parent dirs on write buffer - http://stackoverflow.com/questions/4292733/vim-creating-parent-directories-on-save
 augroup BWCCreateDir
@@ -65,44 +109,24 @@ map <leader><leader> <C-^>
 " easy way to clear highlighted searches
 nmap <silent> <leader>/ :nohlsearch<CR>
 
-" https://github.com/wincent/command-t
-map <leader>t :CommandT<cr>
+" Ctrl-P
+map <leader>t :CtrlPMixed<cr>
 
-" set up commandT to auto flush the buffer when a new file is written
-" borrowed from http://stackoverflow.com/questions/3486747/run-the-commandtflush-command-when-a-new-file-is-written
-augroup NFUCT
-    autocmd!
-    autocmd BufWritePre * call NFUCTset()
-augroup END
-function NFUCTset()
-    if !filereadable(expand('%'))
-        augroup NFUCT
-            autocmd BufWritePost * call NFUCT()
-        augroup END
-    endif
-endfunction
-function NFUCT()
-    augroup NFUCT
-        autocmd!
-        autocmd BufWritePre * call NFUCTset()
+" CtrlP auto cache clearing.
+" --------------------------
+function! SetupCtrlP()
+  if exists("g:loaded_ctrlp") && g:loaded_ctrlp
+    augroup CtrlPExtension
+      autocmd!
+      autocmd FocusGained  * CtrlPClearCache
+      autocmd BufWritePost * CtrlPClearCache
     augroup END
-    CommandTFlush
+  endif
 endfunction
-
-let g:CommandTFileScanner='watchman'
-" below command doesn't work with watchman (need to set config elsewhere, see https://facebook.github.io/watchman/docs/config.html)
-"let g:CommandTWildIgnore=&wildignore . ",**/node_modules/*,**/Godeps/_workspace/*,**/app/cache/*,**/log/*,**/bower_components/*"
-" end command T magic
-
-if executable('rg')
-  nnoremap <leader>aa :Rg<space>
-else
-  nnoremap <leader>aa :Ag<space>
+if has("autocmd")
+  autocmd VimEnter * :call SetupCtrlP()
 endif
 
-" pete's run rspec in iterm thingo
-" https://github.com/notahat/dotfiles/blob/master/vim/plugin/iterm.vim
-au FileType ruby map <D-r> :Spec<CR>
 "
 " open routes or gemfile up top
 au FileType ruby map <leader>gr :topleft :split config/routes.rb<cr>
