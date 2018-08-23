@@ -1,11 +1,8 @@
-WORK_GOPATH=$HOME/Projects/99designs/go
-HOME_GOPATH=$HOME/Projects/go
-export GOPATH=$HOME_GOPATH:$WORK_GOPATH
-export GOBIN=$HOME_GOPATH/bin
+export GOPATH=$HOME/Projects/go
+export GOBIN=$GOPATH/bin
 
-PATH="$HOME/bin:$HOME_GOPATH/bin:$WORK_GOPATH/bin:/usr/local/bin:/usr/local/sbin:$HOME/.rbenv/bin:$PATH"
-export PATH
-#
+export PATH="$HOME/bin:$GOPATH/bin:$HOME/.rbenv/bin:/usr/lib/go-1.10/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -58,12 +55,12 @@ prompt_context(){}
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rbenv)
+plugins=(git rbenv nvm)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-IS_LINUX=
+# IS_LINUX=
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -104,13 +101,13 @@ function p() {
   cd $PROJECTS/$1
 }
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Windows For Linux hacks
-if  uname -r | grep -Eq 'Microsoft'; then
-  alias code="cmd.exe \/C code $*"
+
+if  uname -r | grep -Eq '
+Microsoft'; then
+  alias code="cmd.exe \/C
+ code $*"
 fi
 
 # Linux aws-vault config
