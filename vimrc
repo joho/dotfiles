@@ -33,7 +33,8 @@ if dein#load_state('/home/joho/.vim/bundle')
   call dein#add('nikvdp/ejs-syntax')
   call dein#add('Quramy/tsuquyomi')
   call dein#add('leafgarland/typescript-vim')
-  
+  call dein#add('merlinrebrovic/focus.vim')
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -222,3 +223,6 @@ endif
 
 " let g:neocomplete#sources#omni#input_patterns.go = '\h\w*|\h\w\.\w*'
 let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
+
+" for focus.vim
+let g:focusmode_width = 72
