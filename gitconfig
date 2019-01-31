@@ -36,6 +36,8 @@
 	root = !pwd
 	force = push --force-with-lease
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+	unmerged = !git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
+	merged = !git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
 [core]
 	mergeoptions = --no-ff
 	pager = less -r
