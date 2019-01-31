@@ -96,18 +96,13 @@ dcr() { docker-compose run --rm $* }
 # Duplicate my projects folder thing from my bashrc
 # TODO: make it actually work
 PROJECTS=~/Projects
-
 function p() {
   cd $PROJECTS/$1
 }
 
-
 # Windows For Linux hacks
-
-if  uname -r | grep -Eq '
-Microsoft'; then
-  alias code="cmd.exe \/C
- code $*"
+if  uname -r | grep -Eq 'Microsoft'; then
+  alias code="cmd.exe \/C code $*"
 fi
 
 # Linux aws-vault config
