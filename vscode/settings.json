@@ -8,15 +8,21 @@
     "ban.spellright",
     "castwide.solargraph",
     "CraigMaslowski.erb",
+    "DavidAnson.vscode-markdownlint",
     "dbaeumer.vscode-eslint",
     "doublefint.pgsql",
+    "dsznajder.es7-react-js-snippets",
+    "eg2.tslint",
+    "eg2.vscode-npm-script",
     "esbenp.prettier-vscode",
     "HookyQR.beautify",
     "johob.pico8-vscode",
+    "jpoissonnier.vscode-styled-components",
     "ms-vscode.Go",
     "PeterJausovec.vscode-docker",
     "rebornix.ruby",
     "srfrnk.user-extensions",
+    "uloco.theme-bluloco-light",
     "whizkydee.material-palenight-theme"
   ],
   "[javascript]": {
@@ -46,5 +52,7 @@
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Palenight Theme",
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "custom"
 }
