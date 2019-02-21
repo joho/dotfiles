@@ -1,7 +1,7 @@
 export GOPATH=$HOME/Projects/go
 export GOBIN=$GOPATH/bin
 
-export PATH="$HOME/bin:$GOPATH/bin:$HOME/.rbenv/bin:/usr/lib/go-1.10/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:$GOPATH/bin:$HOME/.rbenv/bin:/usr/lib/go-1.10/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -103,6 +103,7 @@ function p() {
 # Windows For Linux hacks
 if  uname -r | grep -Eq 'Microsoft'; then
   alias code="cmd.exe \/C code $*"
+  export DOCKER_HOST=tcp://localhost:2375
 fi
 
 # Linux aws-vault config
