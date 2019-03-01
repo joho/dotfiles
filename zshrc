@@ -1,7 +1,7 @@
 export GOPATH=$HOME/Projects/go
 export GOBIN=$GOPATH/bin
 
-export PATH="$HOME/bin:$GOPATH/bin:$HOME/.rbenv/bin:/usr/lib/go-1.10/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$GOBIN:$HOME/.rbenv/bin:/usr/lib/go-1.10/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -55,7 +55,7 @@ prompt_context(){}
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rbenv nvm)
+plugins=(git rbenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,3 +110,6 @@ fi
 if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
   export AWS_VAULT_BACKEND=secret-service
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
