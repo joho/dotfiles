@@ -50,6 +50,12 @@
     "css": ["css", "scss", "less"],
     "html": ["htm", "html", "html.erb"]
   },
+  "markdownlint.config": {
+    "MD041": false,
+    "MD026": {
+      "punctuation": ".,:;"
+    }
+  },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Palenight Theme",
   "typescript.updateImportsOnFileMove.enabled": "always",
