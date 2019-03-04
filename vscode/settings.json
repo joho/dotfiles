@@ -56,6 +56,8 @@
       "punctuation": ".,:;"
     }
   },
+  "spellright.groupDictionaries": false,
+  "spellright.language": [ "en-AU" ],
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Palenight Theme",
   "typescript.updateImportsOnFileMove.enabled": "always",
