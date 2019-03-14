@@ -55,3 +55,6 @@
 
 [diff]
   renameLimit = 1024
+[pager]
+	branch = false
+	tag = false
