@@ -37,3 +37,9 @@ shipping:
     matching:
       labels: ["hecate-label-test"]
       all: true
+team:
+  lead:
+    login: joho
+    email: john@hecate.co
+  engineers: ["jonathannen", "geelen", "evanderkoogh"]
+  owned_repos: ["hecate", "hecate-marketing-site"]
