@@ -5,6 +5,7 @@
   "git.autofetch": true,
   "extensions.ignoreRecommendations": false,
   "extensions.recommendations": [
+    "akamud.vscode-theme-onelight",
     "ban.spellright",
     "castwide.solargraph",
     "CraigMaslowski.erb",
@@ -60,7 +61,7 @@
   "spellright.groupDictionaries": false,
   "spellright.language": [ "en-AU" ],
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Palenight Theme",
+  "workbench.colorTheme": "Quiet Light",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "custom"
