@@ -16,7 +16,6 @@ shipping:
     timezone: "Australia/Melbourne"
     emails:
       - john@hecate.co
-      - michael@startmate.com.au
     matching:
       all: true
   -
