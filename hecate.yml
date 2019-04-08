@@ -40,5 +40,5 @@ team:
   lead:
     login: joho
     email: john@hecate.co
-  engineers: ["jonathannen", "geelen", "evanderkoogh"]
+  engineers: ["joho", "jonathannen", "geelen", "evanderkoogh"]
   owned_repos: ["hecate", "hecate-marketing-site"]
