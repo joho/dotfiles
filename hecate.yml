@@ -5,24 +5,10 @@ timezone: "Australia/Melbourne"
 shipping:
   # Array of notifications (ie send library releases to devs, prod releases to PM, etc)
   -
-    rollup: daily
-    timezone: "Asia/Jakarta"
-    emails:
-      - john@hecate.co
-    matching:
-      all: true
-  -
     rollup: weekly
     timezone: "Australia/Melbourne"
     day_of_week: friday
-    hour_of_day: 13
-    emails:
-      - john@hecate.co
-    matching:
-      all: true
-  -
-    rollup: daily
-    timezone: "Europe/Moscow"
+    hour_of_day: 14
     emails:
       - john@hecate.co
     matching:
