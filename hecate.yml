@@ -7,8 +7,8 @@ shipping:
   -
     rollup: weekly
     timezone: "Australia/Melbourne"
-    day_of_week: friday
-    hour_of_day: 18
+    day_of_week: tuesday
+    hour_of_day: 9
     emails:
       - john@hecate.co
     matching:
