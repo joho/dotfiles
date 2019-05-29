@@ -30,7 +30,7 @@ shipping:
     trigger: opened
     matching:
       all: true
-      globs: ["package.json", "Gemfile", "db/schema.rb"]
+      globs: ["package.json", "Gemfile", "**/db/schema.rb"]
 
 team:
   lead:
