@@ -24,6 +24,13 @@ shipping:
     matching:
       labels: ["hecate-label-test"]
       all: true
+  -
+    slack_channels:
+      - general
+    trigger: opened
+    matching:
+      all: true
+      globs: ["package.json", "Gemfile"]
 
 team:
   lead:
