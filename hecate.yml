@@ -27,6 +27,13 @@ shipping:
   -
     slack_channels:
       - general
+    trigger: labelled
+    matching:
+      labels: ["hecate-label-test"]
+      all: true
+  -
+    slack_channels:
+      - general
     trigger: opened
     matching:
       all: true
