@@ -6,6 +6,7 @@
   "extensions.ignoreRecommendations": false,
   "extensions.recommendations": [
     "akamud.vscode-theme-onelight",
+    "aliariff.vscode-erb-beautify",
     "ban.spellright",
     "castwide.solargraph",
     "CraigMaslowski.erb",
@@ -17,12 +18,15 @@
     "eg2.vscode-npm-script",
     "esbenp.prettier-vscode",
     "formulahendry.github-actions",
+    "Gruntfuggly.todo-tree",
     "HookyQR.beautify",
+    "jnbt.vscode-rufo",
     "johob.pico8-vscode",
     "jpoissonnier.vscode-styled-components",
     "ms-vscode.Go",
     "PeterJausovec.vscode-docker",
     "rebornix.ruby",
+    "redhat.vscode-yaml",
     "srfrnk.user-extensions",
     "uloco.theme-bluloco-light",
     "whizkydee.material-palenight-theme"
@@ -33,6 +37,7 @@
   "[ruby]": {
     "editor.tabSize": 2,
   },
+  "ruby.intellisense": "rubyLocate",
   "[markdown]": {
     // enable word wrap, since horizontal scroll while writing isn't human
     "editor.wordWrap": "on",
@@ -59,10 +64,27 @@
     }
   },
   "spellright.groupDictionaries": false,
-  "spellright.language": [ "en-AU" ],
+  "spellright.language": ["en-AU"],
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Quiet Light",
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "window.menuBarVisibility": "toggle",
-  "window.titleBarStyle": "custom"
+  "window.titleBarStyle": "custom",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "files.associations": {
+    "Gemfile": "ruby"
+  },
+  "workbench.tree.indent": 24
 }
