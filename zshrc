@@ -1,7 +1,7 @@
 export GOPATH=$HOME/Projects/go
 export GOBIN=$GOPATH/bin
 
-export PATH="$HOME/bin:$GOBIN:$HOME/.rbenv/bin:/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$GOBIN:$HOME/.rbenv/bin:/usr/share/swift/usr/bin:/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -116,3 +116,34 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 # Homebrew NVM
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/sls.zsh ]] && . /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/slss.zsh ]] && . /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/slss.zsh
