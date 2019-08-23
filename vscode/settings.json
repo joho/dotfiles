@@ -9,6 +9,7 @@
     "aliariff.vscode-erb-beautify",
     "ban.spellright",
     "castwide.solargraph",
+    "CoenraadS.bracket-pair-colorizer-2",
     "CraigMaslowski.erb",
     "DavidAnson.vscode-markdownlint",
     "dbaeumer.vscode-eslint",
@@ -23,12 +24,17 @@
     "jnbt.vscode-rufo",
     "johob.pico8-vscode",
     "jpoissonnier.vscode-styled-components",
+    "karunamurti.haml",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode.csharp",
     "ms-vscode.Go",
-    "PeterJausovec.vscode-docker",
+    "msjsdiag.debugger-for-chrome",
     "rebornix.ruby",
     "redhat.vscode-yaml",
     "srfrnk.user-extensions",
     "uloco.theme-bluloco-light",
+    "Unity.unity-debug",
+    "vknabel.vscode-swift-development-environment",
     "whizkydee.material-palenight-theme"
   ],
   "[javascript]": {
@@ -68,7 +74,6 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Quiet Light",
   "window.menuBarVisibility": "toggle",
-  "window.titleBarStyle": "custom",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -86,5 +91,18 @@
   "files.associations": {
     "Gemfile": "ruby"
   },
-  "workbench.tree.indent": 24
+  "workbench.tree.indent": 24,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "swift.path.swift_driver_bin": "/usr/share/swift/usr/bin/swift",
+  "sde.languageServerMode": "sourcekit-lsp",
+  "sourcekit-lsp.serverPath": "/home/joho/Projects/tools/sourcekit-lsp/.build/x86_64-unknown-linux/debug/sourcekit-lsp",
+  "sourcekit-lsp.toolchainPath": "/usr/share/swift/",
+  "window.titleBarStyle": "custom",
+  "bracket-pair-colorizer-2.colors": [
+    "DarkOrchid",
+    "MediumVioletRed",
+    "MediumSlateBlue",
+  ],
+  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+  "go.useLanguageServer": true
 }
