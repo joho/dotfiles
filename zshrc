@@ -147,3 +147,5 @@ load-nvmrc
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/slss.zsh ]] && . /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/slss.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

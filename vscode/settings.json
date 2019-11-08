@@ -35,7 +35,8 @@
     "uloco.theme-bluloco-light",
     "Unity.unity-debug",
     "vknabel.vscode-swift-development-environment",
-    "whizkydee.material-palenight-theme"
+    "whizkydee.material-palenight-theme",
+    "wix.vscode-import-cost"
   ],
   "[javascript]": {
     "editor.formatOnSave": true,
@@ -57,11 +58,16 @@
     "editor.lineHeight": 25,
     // disable editor suggestions based on previous words
     "editor.quickSuggestions": false,
+    "editor.formatOnSave": false,
   },
   "explorer.confirmDelete": false,
   "beautify.language": {
-    "css": ["css", "scss", "less"],
-    "html": ["htm", "html", "html.erb"]
+    "css": [
+      "css",
+      "scss",
+      "less"
+    ],
+    //"html": ["htm", "html", "html.erb"]
   },
   "markdownlint.config": {
     "MD041": false,
@@ -70,7 +76,9 @@
     }
   },
   "spellright.groupDictionaries": false,
-  "spellright.language": ["en-AU"],
+  "spellright.language": [
+    "en-AU"
+  ],
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Quiet Light",
   "window.menuBarVisibility": "toggle",
@@ -104,5 +112,6 @@
     "MediumSlateBlue",
   ],
   "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
-  "go.useLanguageServer": true
+  "go.useLanguageServer": true,
+  "editor.formatOnSave": true
 }
