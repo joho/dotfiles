@@ -7,6 +7,7 @@
   "extensions.recommendations": [
     "akamud.vscode-theme-onelight",
     "aliariff.vscode-erb-beautify",
+    "andrewcourtice.theme-aurora",
     "ban.spellright",
     "castwide.solargraph",
     "CoenraadS.bracket-pair-colorizer-2",
@@ -36,11 +37,9 @@
     "Unity.unity-debug",
     "vknabel.vscode-swift-development-environment",
     "whizkydee.material-palenight-theme",
+    "wingrunr21.vscode-ruby",
     "wix.vscode-import-cost"
   ],
-  "[javascript]": {
-    "editor.formatOnSave": true,
-  },
   "[ruby]": {
     "editor.tabSize": 2,
   },
@@ -80,7 +79,7 @@
     "en-AU"
   ],
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Quiet Light",
+  "workbench.colorTheme": "Aurora",
   "window.menuBarVisibility": "toggle",
   "eslint.validate": [
     "javascript",
@@ -88,13 +87,21 @@
     "typescript",
     "typescriptreact"
   ],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
+    "editor.formatOnSave": true,
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
+    "editor.formatOnSave": true,
   },
   "files.associations": {
     "Gemfile": "ruby"
@@ -113,5 +120,7 @@
   ],
   "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
   "go.useLanguageServer": true,
-  "editor.formatOnSave": true
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
