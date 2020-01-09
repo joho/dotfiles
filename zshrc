@@ -106,6 +106,14 @@ if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
   export AWS_VAULT_BACKEND=secret-service
 fi
 
+# Android studio setup
+if [[ "$(uname 2> /dev/null)" == "Darwin" ]]; then
+  export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home/
+  export ANDROID_SDK_ROOT=/Users/$USER/Library/Android/sdk
+  # TODO fix paths after https://github.com/apache/cordova-android/issues/845 is resolved
+  export PATH=${PATH}:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/gradle-6.0.1/bin
+fi
+
 export NVM_DIR="$HOME/.nvm"
 # Linux NVM
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
