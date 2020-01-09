@@ -31,16 +31,19 @@
     "msjsdiag.debugger-for-chrome",
     "rebornix.ruby",
     "redhat.vscode-yaml",
+    "scala-lang.scala",
     "srfrnk.user-extensions",
+    "streetsidesoftware.code-spell-checker",
     "uloco.theme-bluloco-light",
     "Unity.unity-debug",
     "vknabel.vscode-swift-development-environment",
+    "webrender.synthwave-x-fluoromachine",
     "whizkydee.material-palenight-theme",
     "wingrunr21.vscode-ruby",
     "wix.vscode-import-cost"
   ],
   "[ruby]": {
-    "editor.tabSize": 2,
+    "editor.tabSize": 2
   },
   "ruby.intellisense": "rubyLocate",
   "[markdown]": {
@@ -56,15 +59,11 @@
     "editor.lineHeight": 25,
     // disable editor suggestions based on previous words
     "editor.quickSuggestions": false,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": false
   },
   "explorer.confirmDelete": false,
   "beautify.language": {
-    "css": [
-      "css",
-      "scss",
-      "less"
-    ],
+    "css": ["css", "scss", "less"]
     //"html": ["htm", "html", "html.erb"]
   },
   "markdownlint.config": {
@@ -74,9 +73,7 @@
     }
   },
   "spellright.groupDictionaries": false,
-  "spellright.language": [
-    "en-AU"
-  ],
+  "spellright.language": ["en-AU"],
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Aurora",
   "window.menuBarVisibility": "toggle",
@@ -88,22 +85,23 @@
   ],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "files.associations": {
-    "Gemfile": "ruby"
+    "Gemfile": "ruby",
+    ".env": "bat"
   },
   "workbench.tree.indent": 24,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -115,11 +113,14 @@
   "bracket-pair-colorizer-2.colors": [
     "DarkOrchid",
     "MediumVioletRed",
-    "MediumSlateBlue",
+    "MediumSlateBlue"
   ],
   "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
   "go.useLanguageServer": true,
   "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
