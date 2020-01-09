@@ -69,12 +69,7 @@ source $ZSH/oh-my-zsh.sh
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION || "$(uname 2> /dev/null)" == "Linux" ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a iTerm2"'
-fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
