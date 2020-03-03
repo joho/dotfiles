@@ -29,6 +29,7 @@
     "ms-vscode.csharp",
     "ms-vscode.Go",
     "msjsdiag.debugger-for-chrome",
+    "Prisma.vscode-graphql",
     "rebornix.ruby",
     "redhat.vscode-yaml",
     "scala-lang.scala",
@@ -122,5 +123,9 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "todo-tree.tree.showScanModeButton": false
 }
