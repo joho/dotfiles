@@ -26,7 +26,7 @@
     "jpoissonnier.vscode-styled-components",
     "karunamurti.haml",
     "ms-azuretools.vscode-docker",
-    "ms-vscode.csharp",
+    "ms-dotnettools.csharp",
     "ms-vscode.Go",
     "msjsdiag.debugger-for-chrome",
     "Prisma.vscode-graphql",
