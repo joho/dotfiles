@@ -95,6 +95,10 @@ function p() {
   cd $PROJECTS/$1
 }
 
+function test() {
+  http POST http://localhost:4000/1/functions/amber-backend-dev-$1/invocations
+}
+
 # Windows For Linux hacks
 if  uname -r | grep -Eq 'Microsoft'; then
   alias code="cmd.exe \/C code $*"
