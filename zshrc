@@ -84,6 +84,7 @@ alias cg='cd $(git root)'
 if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
   alias open='xdg-open'
 fi
+alias gitprune="git branch --merged master | grep -v '^[ *]*master$' | xargs git branch -d"
 
 dc() { docker-compose $* }
 dcr() { docker-compose run --rm $* }
