@@ -71,20 +71,14 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 
 export EDITOR='vim'
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Custom aliases
-alias publickey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias gpr='git pull --rebase'
 alias cg='cd $(git root)'
-if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
-  alias open='xdg-open'
-fi
 alias gitprune="git branch --merged master | grep -v '^[ *]*master$' | xargs git branch -d"
+
+# WSL2 cache bullshit
+# See https://github.com/microsoft/WSL/issues/4166#issuecomment-628493643
+alias drop_cache="sudo sh -c \"echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a && printf '\n%s\n' 'Ram-cache and Swap Cleared'\""
 
 dc() { docker-compose $* }
 dcr() { docker-compose run --rm $* }
@@ -100,15 +94,20 @@ function test() {
   http POST http://localhost:4000/1/functions/amber-backend-dev-$1/invocations
 }
 
-# Windows For Linux hacks
-if  uname -r | grep -Eq 'Microsoft'; then
-  alias code="cmd.exe \/C code $*"
-  export DOCKER_HOST=tcp://localhost:2375
-fi
-
-# Linux aws-vault config
-if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
+if  uname -r | grep -Eq 'microsoft'; then
+  # Windows For Linux hacks
+  # alias code="cmd.exe \/C code $*"
+  # export DOCKER_HOST=tcp://localhost:2375
+  eval `keychain --eval --agents ssh id_rsa`
+  export AWS_VAULT_BACKEND=file
+  
+  alias open='wsl-open'
+  export BROWSER=wsl-open
+elif [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
+  # Linux aws-vault config
   export AWS_VAULT_BACKEND=secret-service
+
+  alias open='xdg-open'
 fi
 
 # Android studio setup
@@ -145,15 +144,5 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/sls.zsh ]] && . /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/slss.zsh ]] && . /home/joho/Projects/pon/pon/backend/node_modules/tabtab/.completions/slss.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
