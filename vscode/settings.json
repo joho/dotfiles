@@ -8,7 +8,6 @@
     "akamud.vscode-theme-onelight",
     "aliariff.vscode-erb-beautify",
     "andrewcourtice.theme-aurora",
-    "castwide.solargraph",
     "CoenraadS.bracket-pair-colorizer-2",
     "CraigMaslowski.erb",
     "darkriszty.markdown-table-prettify",
@@ -29,16 +28,13 @@
     "karunamurti.haml",
     "mechatroner.rainbow-csv",
     "ms-azuretools.vscode-docker",
-    "ms-dotnettools.csharp",
     "ms-vsliveshare.vsliveshare",
     "msjsdiag.debugger-for-chrome",
     "rebornix.ruby",
     "redhat.vscode-yaml",
-    "scala-lang.scala",
     "srfrnk.user-extensions",
     "streetsidesoftware.code-spell-checker",
     "uloco.theme-bluloco-light",
-    "Unity.unity-debug",
     "vknabel.vscode-swift-development-environment",
     "webrender.synthwave-x-fluoromachine",
     "whizkydee.material-palenight-theme",
@@ -48,7 +44,6 @@
   "[ruby]": {
     "editor.tabSize": 2
   },
-  "ruby.intellisense": "rubyLocate",
   "[markdown]": {
     // enable word wrap, since horizontal scroll while writing isn't human
     "editor.wordWrap": "on",
@@ -108,10 +103,6 @@
   },
   "workbench.tree.indent": 24,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "swift.path.swift_driver_bin": "/usr/share/swift/usr/bin/swift",
-  "sde.languageServerMode": "sourcekit-lsp",
-  "sourcekit-lsp.serverPath": "/home/joho/Projects/tools/sourcekit-lsp/.build/x86_64-unknown-linux/debug/sourcekit-lsp",
-  "sourcekit-lsp.toolchainPath": "/usr/share/swift/",
   "window.titleBarStyle": "custom",
   "bracket-pair-colorizer-2.colors": [
     "DarkOrchid",
