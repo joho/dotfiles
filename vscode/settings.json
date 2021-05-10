@@ -20,6 +20,7 @@
     "eg2.vscode-npm-script",
     "esbenp.prettier-vscode",
     "formulahendry.github-actions",
+    "GraphQL.vscode-graphql",
     "Gruntfuggly.todo-tree",
     "HookyQR.beautify",
     "jnbt.vscode-rufo",
@@ -29,10 +30,8 @@
     "mechatroner.rainbow-csv",
     "ms-azuretools.vscode-docker",
     "ms-dotnettools.csharp",
-    "ms-vscode.Go",
     "ms-vsliveshare.vsliveshare",
     "msjsdiag.debugger-for-chrome",
-    "Prisma.vscode-graphql",
     "rebornix.ruby",
     "redhat.vscode-yaml",
     "scala-lang.scala",
@@ -130,5 +129,15 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "todo-tree.tree.showScanModeButton": false
+  "todo-tree.tree.showScanModeButton": false,
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)"
 }
