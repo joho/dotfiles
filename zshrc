@@ -74,7 +74,9 @@ export EDITOR='vim'
 # Custom aliases
 alias gpr='git pull --rebase'
 alias cg='cd $(git root)'
-alias gitprune="git branch --merged master | grep -v '^[ *]*master$' | xargs git branch -d"
+if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
+  alias open='xdg-open'
+fi
 
 # WSL2 cache bullshit
 # See https://github.com/microsoft/WSL/issues/4166#issuecomment-628493643
@@ -100,7 +102,7 @@ if  uname -r | grep -Eq 'microsoft'; then
   # export DOCKER_HOST=tcp://localhost:2375
   eval `keychain --eval --agents ssh id_rsa`
   export AWS_VAULT_BACKEND=file
-  
+
   alias open='wsl-open'
   export BROWSER=wsl-open
 elif [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
