@@ -1,7 +1,7 @@
 export GOPATH=$HOME/Projects/go
 export GOBIN=$GOPATH/bin
 
-export PATH="$HOME/bin:$GOBIN:$HOME/.rbenv/bin:/usr/share/swift/usr/bin:/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$GOBIN:$HOME/.rbenv/bin:/usr/share/swift/usr/bin:/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:/opt/homebrew/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
