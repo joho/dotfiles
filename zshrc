@@ -1,7 +1,7 @@
 export GOPATH=$HOME/Projects/go
 export GOBIN=$GOPATH/bin
 
-export PATH="$HOME/bin:$GOBIN:$HOME/.rbenv/bin:/usr/share/swift/usr/bin:/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:/opt/homebrew/bin:$PATH"
+export PATH="$HOME/bin:$GOBIN:/opt/homebrew/lib/ruby/gems/3.2.0/bin:/opt/homebrew/opt/ruby/bin:/opt/homebrew/opt/openjdk/bin:/usr/share/swift/usr/bin:/usr/local/go/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/Projects/tools/gbdk/bin:$PATH:/usr/local/bin:/usr/local/sbin"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -55,7 +55,7 @@ prompt_context(){}
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rbenv)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,7 +93,7 @@ function p() {
 }
 
 function test() {
-  http POST http://localhost:4000/1/functions/amber-backend-dev-$1/invocations
+  http POST http://localhost:4000/2015-03-31/functions/$1/invocations
 }
 
 if  uname -r | grep -Eq 'microsoft'; then
@@ -148,3 +148,4 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
