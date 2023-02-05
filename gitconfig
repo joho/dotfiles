@@ -20,6 +20,7 @@
 	untracked = cyan
 [push]
 	default = current
+	autoSetupRemote = true
 [fetch]
 	prune = true
 [apply]
@@ -30,7 +31,7 @@
 	track = !sh -c 'git branch --track "$0" "origin/$0" && git checkout "$0"'
 	ignored = "!git ls-files --others --exclude-standard"
 	st = status
-	cav = commit -a -v
+	cav = commit -nav
 	cv = commit -v
 	co = checkout
 	root = !pwd
