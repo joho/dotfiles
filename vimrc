@@ -18,7 +18,6 @@ if dein#load_state('~/.vim/bundle')
   call dein#add('rking/ag.vim')
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('editorconfig/editorconfig-vim')
-  call dein#add('Shougo/neocomplete.vim')
   call dein#add('scrooloose/syntastic')
   call dein#add('tomtom/tcomment_vim')
   call dein#add('vim-airline/vim-airline')
@@ -28,7 +27,6 @@ if dein#load_state('~/.vim/bundle')
   call dein#add('mxw/vim-jsx')
   call dein#add('tpope/vim-markdown')
   call dein#add('prettier/vim-prettier')
-  call dein#add('tpope/vim-rails')
   call dein#add('tpope/vim-surround')
   call dein#add('nikvdp/ejs-syntax')
   call dein#add('Quramy/tsuquyomi')
@@ -199,30 +197,6 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_javascript_checkers = ['eslint']
 " ignore a bunch of irritating messages for html template files
 let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
-
-" Code completion
-" let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-autocmd FileType go setlocal omnifunc=go#complete#Complete
-if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
-endif
-
-" let g:neocomplete#sources#omni#input_patterns.go = '\h\w*|\h\w\.\w*'
-let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 
 " for focus.vim
 let g:focusmode_width = 72
