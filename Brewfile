@@ -1,0 +1,5 @@
+brew "neovim"
+brew "ripgrep"
+brew "tree-sitter-cli"
+cask "vimr"
+cask "neovide-app"

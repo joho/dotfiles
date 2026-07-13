@@ -73,7 +73,8 @@ export NVM_DIR="$HOME/.nvm"
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
-export EDITOR='vim'
+export EDITOR='nvim'
+export VISUAL="$EDITOR"
 
 # Custom aliases
 alias gpr='git pull --rebase'
@@ -123,4 +124,3 @@ if [[ "$(uname 2> /dev/null)" == "Darwin" ]]; then
   # TODO fix paths after https://github.com/apache/cordova-android/issues/845 is resolved
   export PATH=${PATH}:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/gradle-6.0.1/bin
 fi
-
