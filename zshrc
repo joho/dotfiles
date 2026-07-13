@@ -124,3 +124,17 @@ if [[ "$(uname 2> /dev/null)" == "Darwin" ]]; then
   # TODO fix paths after https://github.com/apache/cordova-android/issues/845 is resolved
   export PATH=${PATH}:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/gradle-6.0.1/bin
 fi
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/joho/.lmstudio/bin"
+# End of LM Studio CLI section
+# Wrap call in caffinate to not sleep (ie claud ecode etc
+no-sleep() {
+    echo "☕️ Caffeinating your Mac... Launching $@"
+    # -d: keeps display awake
+    # -i: prevents system idle sleep 
+    # -m: keeps disk active
+    # -s: prevents sleep on AC power
+    caffeinate -dims "$@"
+}
