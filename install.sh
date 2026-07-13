@@ -37,6 +37,7 @@ links=(
   "bashrc:$HOME/.bashrc"
   "gemrc:$HOME/.gemrc"
   "gitconfig:$HOME/.gitconfig"
+  "gitconfig.amber:$HOME/.gitconfig.amber"
   "gitignore_global:$HOME/.gitignore_global"
   "nvim:$HOME/.config/nvim"
   "vimrc:$HOME/.vimrc"
@@ -78,6 +79,17 @@ for entry in "${links[@]}"; do
   ln -s "$source_path" "$target_path"
   printf 'linked   %s -> %s\n' "$target_path" "$source_path"
 done
+
+# Seed an empty machine-local shell file for secrets / per-machine config.
+# It is sourced by zshrc but deliberately never tracked in this repo.
+local_shell="$HOME/.zshrc.local"
+if [[ ! -e "$local_shell" ]]; then
+  cat >"$local_shell" <<'EOF'
+# Machine-specific and secret shell config. Not tracked in git.
+# Add API keys, tokens, and per-machine PATH tweaks here.
+EOF
+  printf 'created  %s\n' "$local_shell"
+fi
 
 if ((conflicts)); then
   printf '\n%d conflict(s) require manual review.\n' "$conflicts" >&2

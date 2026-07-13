@@ -8,6 +8,7 @@ This repository keeps John Barton's command-line and editor configuration consis
 
 - `zshrc`, `bashrc`: shell configuration. Zsh is the primary interactive shell.
 - `gitconfig`, `gitignore_global`: Git defaults and global ignore rules.
+- `gitconfig.amber`: work identity, applied under `~/Source/amber/` via a conditional include.
 - `nvim/`: primary Neovim configuration, shared by terminal Neovim, VimR, and Neovide.
 - `vimrc`, `gvimrc`: retained legacy Vim/MacVim configuration.
 - `vscode/settings.json`: shared VS Code user settings.
@@ -48,4 +49,4 @@ Use the checks relevant to the files changed:
 ## Current known issues
 
 - The legacy `vimrc` still uses dein and several obsolete or unmaintained plugins. Do not expand that stack; new editor work belongs in `nvim/`.
-- Work/personal and machine-local shell differences are not yet separated from the shared `zshrc`.
+- Work/personal git identity is split via a conditional include (`gitconfig.amber` under `~/Source/amber/`); machine-local and secret shell config lives in an untracked `~/.zshrc.local` sourced by `zshrc`. Keep new machine/work-specific values in those seams rather than the shared files.

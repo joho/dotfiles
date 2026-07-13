@@ -1,0 +1,7 @@
+# Amber-specific Git identity.
+#
+# Applied automatically for repositories under ~/Source/amber/ via the
+# [includeIf "gitdir:~/Source/amber/"] directive in the main gitconfig.
+# This keeps work commits on the Amber email without touching personal repos.
+[user]
+	email = john.barton@amber.com.au

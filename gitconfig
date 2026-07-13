@@ -52,13 +52,21 @@
 
 [rerere]
 	enabled = true
-[http]
-	cookiefile = /Users/joho/.gitcookies
-
+[pull]
+	rebase = true
 [diff]
-  renameLimit = 1024
+	renameLimit = 1024
+	colorMoved = zebra
 [pager]
 	branch = false
 	tag = false
 [init]
 	defaultBranch = main
+[ai "cadence"]
+	org-id = c58abdb9-8d4b-4645-ac30-16784d10b549
+	org = amberelectric
+# Work identity: repos under ~/Source/amber/ automatically use the Amber
+# email via ~/.gitconfig.amber. Everything else keeps the personal identity
+# above. Adjust the gitdir path if you keep work repos elsewhere.
+[includeIf "gitdir:~/Source/amber/"]
+	path = ~/.gitconfig.amber

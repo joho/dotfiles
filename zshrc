@@ -63,6 +63,29 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+# Auto-switch node version on cd when a .nvmrc is present (Amber dev-setup standard).
+# https://kinduff.com/2016/09/14/automatic-version-switch-for-nvm
+if command -v nvm >/dev/null 2>&1; then
+  autoload -U add-zsh-hook
+  load-nvmrc() {
+    if [[ -f .nvmrc && -r .nvmrc ]]; then
+      nvm use
+    elif [[ $(nvm version) != $(nvm version default) ]]; then
+      echo "Reverting to nvm default version"
+      nvm use default
+    fi
+  }
+  add-zsh-hook chpwd load-nvmrc
+  load-nvmrc
+fi
+
+# Ruby via rbenv (Amber standard: rbenv-managed Ruby, currently 3.2.x).
+# Inert until `brew install rbenv ruby-build`; once present, rbenv shims take
+# precedence over the Homebrew Ruby on PATH above.
+if command -v rbenv >/dev/null 2>&1; then
+  eval "$(rbenv init - zsh)"
+fi
+
 # User configuration
 # IS_LINUX=
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -87,8 +110,8 @@ fi
 # See https://github.com/microsoft/WSL/issues/4166#issuecomment-628493643
 alias drop_cache="sudo sh -c \"echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a && printf '\n%s\n' 'Ram-cache and Swap Cleared'\""
 
-dc() { docker-compose $* }
-dcr() { docker-compose run --rm $* }
+dc() { docker-compose "$@" }
+dcr() { docker-compose run --rm "$@" }
 
 # Duplicate my projects folder thing from my bashrc
 # TODO: make it actually work
@@ -97,8 +120,10 @@ function p() {
   cd $PROJECTS/$1
 }
 
-function test() {
-  http POST http://localhost:4000/2015-03-31/functions/$1/invocations
+# Invoke a locally-running Lambda (SAM/serverless-offline on :4000).
+# NB: do NOT name this `test` — that shadows the shell's `test`/`[` builtin.
+function invoke-lambda() {
+  http POST "http://localhost:4000/2015-03-31/functions/$1/invocations"
 }
 
 if  uname -r | grep -Eq 'microsoft'; then
@@ -138,3 +163,8 @@ no-sleep() {
     # -s: prevents sleep on AC power
     caffeinate -dims "$@"
 }
+
+# Machine-specific and secret config lives outside this repo so it never gets
+# committed: API keys, tokens, per-machine PATH tweaks, work-only settings.
+# `install.sh` creates an empty ~/.zshrc.local for you if one doesn't exist.
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"

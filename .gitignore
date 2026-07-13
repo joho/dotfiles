@@ -1,2 +1,4 @@
 .DS_Store
 *.swp
+# machine-local / secret overrides should never be committed
+*.local
