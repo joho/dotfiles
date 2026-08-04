@@ -27,3 +27,7 @@ cask "visual-studio-code"
 
 # --- fonts (powerline glyphs for the agnoster zsh theme) ---
 cask "font-meslo-lg-nerd-font"
+
+# --- AI tools ---
+brew "herdr"
+brew "crit"
