@@ -72,3 +72,6 @@ sysinfo.txt
 
 # arudboy stuff
 .ycm_extra_conf.pyc
+
+# AI tooling
+**/.claude/settings.local.json
