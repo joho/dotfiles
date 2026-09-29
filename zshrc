@@ -106,6 +106,13 @@ if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
   alias open='xdg-open'
 fi
 
+# Amber Docker Sandbox: run an agent in the sandbox with Herdr tracking the pane.
+# HERDR_AGENT is set per launch, never exported (Herdr would tag every process).
+# Agent launches only — `sbxc npm test` would still report the pane as claude.
+if command -v amber-sbx > /dev/null; then
+  alias sbxc='HERDR_AGENT=claude amber-sbx exec'
+fi
+
 # WSL2 cache bullshit
 # See https://github.com/microsoft/WSL/issues/4166#issuecomment-628493643
 alias drop_cache="sudo sh -c \"echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a && printf '\n%s\n' 'Ram-cache and Swap Cleared'\""
