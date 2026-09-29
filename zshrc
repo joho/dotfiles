@@ -106,11 +106,16 @@ if [[ "$(uname 2> /dev/null)" == "Linux" ]]; then
   alias open='xdg-open'
 fi
 
-# Amber Docker Sandbox: run an agent in the sandbox with Herdr tracking the pane.
+# Amber Docker Sandbox, two modes:
+#   sbxa <agent> [args] — agent pane (claude, codex, amp): Herdr tracks it as
+#                         that agent for exactly the lifetime of its process.
+#   sbxs [workspace]    — plain shell in the sandbox: no HERDR_AGENT, since the
+#                         attach outlives any agent started inside it and Herdr
+#                         would report an agent the whole session.
 # HERDR_AGENT is set per launch, never exported (Herdr would tag every process).
-# Agent launches only — `sbxc npm test` would still report the pane as claude.
 if command -v amber-sbx > /dev/null; then
-  alias sbxc='HERDR_AGENT=claude amber-sbx exec'
+  sbxa() { local agent=$1; shift; HERDR_AGENT=$agent amber-sbx exec "$agent" "$@"; }
+  alias sbxs='amber-sbx'
 fi
 
 # WSL2 cache bullshit
