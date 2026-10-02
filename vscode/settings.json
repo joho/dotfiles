@@ -56,7 +56,11 @@
     // more comfortable line height
     "editor.lineHeight": 25,
     // disable editor suggestions based on previous words
-    "editor.quickSuggestions": false,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
     "editor.formatOnSave": false
   },
   "explorer.confirmDelete": false,
